@@ -1,0 +1,80 @@
+record_id,title,primary_link,status,status_code,error_message,checked_method
+NZNEURO-079,Health at a Glance (OECD Indicators) - NZ profile,https://www.oecd.org/en/publications/health-at-a-glance-2025_15a55280-en/new-zealand_2154f240-en.html,http_error,403,Forbidden,GET
+NZNEURO-078,WHO Mortality Database - NZ submission,https://platform.who.int/mortality/countries/country-details/MDB/new-zealand,ok,200,,HEAD
+NZNEURO-077,Atlas of MS,https://atlasofms.org/,ok,200,,HEAD
+NZNEURO-076,Global Health Data Exchange (GHDx) - NZ records,https://ghdx.healthdata.org/geography/new-zealand,ok,200,,HEAD
+NZNEURO-075,NZ Congenital Anomalies Monitoring Program (duplicate/recategorisation candidate),https://www.icbdsr.org/,ok,200,,HEAD
+NZNEURO-074,MSBase NZ,https://www.msbase.org/,ok,200,,HEAD
+NZNEURO-073,EpiNet database / NZ SUDEP sub-registry,https://www.epinet.co.nz/,http_error,403,Forbidden,GET
+NZNEURO-072,National Stroke Reperfusion Register,https://doi.org/10.1111/imj.16318,http_error,403,Forbidden,GET
+NZNEURO-071,NZ Major Trauma Registry (NZ-MTR),https://www.healthnz.govt.nz/health-professionals/guidance-standards/topic/trauma,ok,200,,HEAD
+NZNEURO-070,NZ Cerebral Palsy Register (NZCPR),https://nz.cpregister.com/,ok,200,,HEAD
+NZNEURO-069,NZ Spinal Cord Injury Registry (NZSCIR),https://nzspinaltrust.org.nz/i-need-information/new-zealand-spinal-cord-injury-registry-nzscir/new-zealand-spinal-cord-injury-registry-nzscir/,ok,200,,HEAD
+NZNEURO-068,NZ Cancer Registry (NZCR),https://www.healthnz.govt.nz/about-us/health-data/data-sets-and-collections/cancer-data-and-statistics/new-zealand-cancer-registry,ok,200,,HEAD
+NZNEURO-067,CJD Registry,https://www.otago.ac.nz/cjd-registry,http_error,403,Forbidden,GET
+NZNEURO-066,Punaha Io - NZ Neuro-Genetic Registry & BioBank,https://mda.org.nz/our-research/registry-biobank/,http_error,404,Not Found,HEAD
+NZNEURO-065,MND NZ Registry,https://mnd.org.nz/,ok,200,,HEAD
+NZNEURO-064,MS impact on employment and income in NZ,https://onlinelibrary.wiley.com/doi/10.1111/ane.12714,http_error,403,Forbidden,GET
+NZNEURO-063,NZIER Economic Burden of Stroke (2021),https://www.stroke.org.nz/understanding-stroke/statistics-data/,ok,200,,HEAD
+NZNEURO-062,Dementia Economic Impact Report (DEIR) 2020/2021,https://alzheimers.org.nz/explore/advocacy/facts-and-figures/,ok,200,,HEAD
+NZNEURO-061,"MS Virtual Register (NZ, IDI-linked)",https://www.nzmj.org.nz/journal/vol-138-no-1612/identifying-multiple-sclerosis-in-linked-administrative-health-data-in-aotearoa-new-zealand,ok,200,,HEAD
+NZNEURO-060,"Ethnic and HLA patterns related to MS, Wellington",https://pmc.ncbi.nlm.nih.gov/articles/PMC1028646/,ok,200,,HEAD
+NZNEURO-059,"Ethnic disparities in stroke subtypes, 2002-2003",https://doi.org/10.1016/S1474-4422(05)70325-2,ok,200,,HEAD
+NZNEURO-058,"Changes in stroke incidence, Auckland, 1981-91",https://doi.org/10.1016/0140-6736(93)92938-p,ok,200,,HEAD
+NZNEURO-057,Atrial fibrillation in NZ primary care,https://pubmed.ncbi.nlm.nih.gov/27798365/,ok,203,,HEAD
+NZNEURO-056,Ethnic inequalities in 30-day ischaemic stroke survival,https://nzmj.org.nz/journal/vol-129-no-1437/are-ethnic-inequalities-in-30-day-ischaemic-stroke-survival-emerging-as-treatment-becomes-more-effective,ok,200,,HEAD
+NZNEURO-055,"Acute encephalitis in adults, Auckland (2005-2009)",https://www.sciencedirect.com/science/article/pii/S0967586812001750,http_error,403,Forbidden,GET
+NZNEURO-054,PBNZ Specialist Scope Register,https://physioboard.org.nz/specialist,ok,200,,HEAD
+NZNEURO-053,Health Workforce Information Programme (HWIP),https://www.tewhatuora.govt.nz/for-health-professionals/health-workforce-development/health-workforce-initiatives/health-workforce-information-programme,ok,200,,HEAD
+NZNEURO-052,NZPB Register - Neuropsychologist Scope,https://psychologistsboard.org.nz/,ok,200,,HEAD
+NZNEURO-051,MCNZ Annual Workforce Survey + Data Dashboard,https://www.mcnz.org.nz/about-us/our-data/,ok,200,,HEAD
+NZNEURO-050,"NZ Neurologist Workforce 2024 Analysis (Ranta et al., 2026)",https://doi.org/10.1136/bmjno-2025-001397,http_error,403,Forbidden,GET
+NZNEURO-049,NZ's Neurologist Workforce (2015 study),https://pubmed.ncbi.nlm.nih.gov/26365844/,ok,203,,HEAD
+NZNEURO-048,Dunedin Study - adult ADHD analysis,https://psychiatryonline.org/doi/10.1176/appi.ajp.2015.14101266,http_error,403,Forbidden,GET
+NZNEURO-047,Stroke Research Clinic,https://www.auckland.ac.nz/en/fmhs/research/our-research-centres/fmhs-university-research-centres/cbr/clinics/stroke-research-clinic.html,ok,200,,HEAD
+NZNEURO-046,Auckland TIA Study (ATIAS) 2011-12,https://doi.org/10.1161/STROKEAHA.116.014010,http_error,403,Forbidden,GET
+NZNEURO-045,BIONIC (2010-11) and BIONIC2 (2021-22),,missing_url,,No URL supplied,
+NZNEURO-044,ARCOS V (fifth Auckland Regional Community Stroke Study),https://doi.org/10.1177/1747493019884528,http_error,403,Forbidden,GET
+NZNEURO-043,ARCOS I-III / Auckland Regional Community Stroke Studies (published sources checked),,missing_url,,No URL supplied,
+NZNEURO-042,Voice of Rare Disorders Survey 2025,https://raredisorders.org.nz/about-rare-disorders/white-paper-2026/,ok,200,,HEAD
+NZNEURO-041,Migraine in Aotearoa NZ Survey (MiANZ) 2022,https://migrainefoundation.org.nz/migraine-in-nz/survey-2022-insights/,ok,200,,HEAD
+NZNEURO-040,Neurogenetics Research Clinic,https://www.auckland.ac.nz/en/fmhs/research/our-research-centres/fmhs-university-research-centres/cbr/clinics/neurogenetics-research-clinic.html,ok,200,,HEAD
+NZNEURO-039,"Dementia Prevention Research Clinics (DPRC) - Auckland, Christchurch, Dunedin",https://www.brainresearch.co.nz/clinics/,ok,200,,HEAD
+NZNEURO-038,"Health, Work and Retirement Study (HWR)",https://www.massey.ac.nz/documents/1116/NZLSA_Research_Summary_2014.pdf,ok,200,,HEAD
+NZNEURO-037,Life and Living in Advanced Age (LiLACS),https://lilacsnz.auckland.ac.nz/,ok,200,,HEAD
+NZNEURO-036,NZ Longitudinal Study of Ageing (NZLSA),https://www.massey.ac.nz/documents/1116/NZLSA_Research_Summary_2014.pdf,ok,200,,HEAD
+NZNEURO-035,MS prevalence in NZ,https://journals.sagepub.com/doi/10.1177/1352458510379614,http_error,403,Forbidden,GET
+NZNEURO-034,Youth Health and Wellbeing Survey,https://msd.govt.nz/about-msd-and-our-work/publications-resources/consultations/youth-health-and-wellbeing-survey-results/index.html,ok,200,,HEAD
+NZNEURO-033,Growing Up in New Zealand,https://www.growingup.co.nz/,ok,200,,HEAD
+NZNEURO-032,New Zealand Health Survey (NZHS) - Children 0-14,https://minhealthnz.shinyapps.io/nz-health-survey-2024-25-annual-data-explorer/,ok,200,,HEAD
+NZNEURO-031,New Zealand Health Survey (NZHS) - Adults 15+,https://minhealthnz.shinyapps.io/nz-health-survey-2024-25-annual-data-explorer/,ok,200,,HEAD
+NZNEURO-030,"Survey of Family, Income and Employment (SoFIE)",https://www.otago.ac.nz/wellington/research/groups/research-groups-in-the-department-of-public-health/hirp/sofie-health,http_error,403,Forbidden,GET
+NZNEURO-029,Household Economic Survey / Household Income and Living Survey (HES/HILS),https://www.stats.govt.nz/information-releases/household-income-and-housing-cost-statistics-year-ended-june-2025/,ok,200,,HEAD
+NZNEURO-028,Household Labour Force Survey (HLFS),https://www.stats.govt.nz/assets/Reports/Household-labour-force-survey-population-rebase-from-2023-estimated-resident-population/Download-data/household-labour-force-survey-population-rebase-September-2018-March-2025-quarters.zip,ok,200,,HEAD
+NZNEURO-027,Te Kupenga 2018,https://www.stats.govt.nz/information-releases/te-kupenga-2018-final-english/,ok,200,,HEAD
+NZNEURO-026,General Social Survey (GSS),https://datainfoplus.stats.govt.nz/,ok,200,,HEAD
+NZNEURO-025,Disability Survey 2013 - Adults in residential facilities,https://www.stats.govt.nz/information-releases/disability-survey-2013/,ok,200,,HEAD
+NZNEURO-024,Disability Survey 2013 - Children under 15 in private households,https://www.stats.govt.nz/information-releases/disability-survey-2013/,ok,200,,HEAD
+NZNEURO-023,Disability Survey 2013 - Adults 15+ in private households,https://www.stats.govt.nz/information-releases/disability-survey-2013/,ok,200,,HEAD
+NZNEURO-022,Household Disability Survey 2023 - Children under 15,https://www.stats.govt.nz/reports/household-disability-survey-2023-findings-definitions-and-design-summary/,ok,200,,HEAD
+NZNEURO-021,Household Disability Survey 2023 - Adults 15+,https://www.stats.govt.nz/reports/household-disability-survey-2023-findings-definitions-and-design-summary/,ok,200,,HEAD
+NZNEURO-020,"Census (2013, 2018, 2023)",https://www.stats.govt.nz/reports/2023-census-final-content-report/,ok,200,,HEAD
+NZNEURO-019,"HealthOne (shared electronic patient record, South Island)",https://healthone.org.nz/what-is-healthone,http_error,403,Forbidden,GET
+NZNEURO-018,CARM database (Centre for Adverse Reactions Monitoring),https://nzphvc-carm.otago.ac.nz/home/,ok,200,,HEAD
+NZNEURO-017,EpiSurv - National Notifiable Diseases database,https://www.esr.cri.nz/our-research/nga-kete/infectious-disease-intelligence/notifiable-diseases/,ok,200,,HEAD
+NZNEURO-016,Pharmaceutical Schedule + Special Authority criteria,https://schedule.pharmac.govt.nz/,ok,200,,HEAD
+NZNEURO-015,Pharmac NPPA Outcome Data,https://schedule.pharmac.govt.nz/nppaoutcomedata.php,ok,200,,HEAD
+NZNEURO-014,B4 School Check (Well Child Tamariki Ora),https://www.tewhatuora.govt.nz/for-health-professionals/clinical-guidance/specific-life-stage-health-information/child-health/well-child-tamariki-programme/te-mahau-tarearea-o-tamariki-ora/b4-school-check,ok,200,,HEAD
+NZNEURO-013,National Patient Flow (NPF),https://www.tewhatuora.govt.nz/publications/national-patient-flow-file-specification,ok,200,,HEAD
+NZNEURO-012,National Maternity Collection (MAT),https://www.tewhatuora.govt.nz/for-health-professionals/data-and-statistics/nz-health-statistics/national-collections-and-surveys/collections/national-maternity-collection,ok,200,,HEAD
+NZNEURO-011,PRIMHD (Programme for the Integration of Mental Health Data),https://www.tewhatuora.govt.nz/for-health-professionals/data-and-statistics/nz-health-statistics/national-collections-and-surveys/collections/primhd-mental-health-data,ok,200,,HEAD
+NZNEURO-010,Mortality Collection (MORT),https://www.tewhatuora.govt.nz/for-health-professionals/data-and-statistics/nz-health-statistics/national-collections-and-surveys/collections/mortality-collection,ok,200,,HEAD
+NZNEURO-009,Pharmaceutical Collection (PHARMS),https://www.tewhatuora.govt.nz/for-health-professionals/data-and-statistics/nz-health-statistics/national-collections-and-surveys/collections/pharmaceutical-collection,ok,200,,HEAD
+NZNEURO-008,National Minimum Dataset (NMDS) - Hospital Events,https://www.tewhatuora.govt.nz/for-health-professionals/data-and-statistics/nz-health-statistics/national-collections-and-surveys/collections/national-minimum-dataset-hospital-events,ok,200,,HEAD
+NZNEURO-007,MSD Income Support Payments (SWIFTT),https://idcommons.discourse.group/pub/msd-income-support-payments,ok,200,,HEAD
+NZNEURO-006,ACC Injury Claims Data,https://datainfoplus.stats.govt.nz/item/nz.govt.stats/693a6872-d98c-4ad1-90a1-03a9d737bca5,http_error,404,Not Found,HEAD
+NZNEURO-005,IDI MOH Chronic Condition/Significant Health Event Cohort data,https://datainfoplus.stats.govt.nz/item/nz.govt.stats/ac775e86-9f66-486a-adb9-64b0f512c54c,http_error,404,Not Found,HEAD
+NZNEURO-004,interRAI (Home Care Assessment Data),https://www.interrai.co.nz/,ok,200,,HEAD
+NZNEURO-003,Child Disability Allowance,https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html,ok,200,,HEAD
+NZNEURO-002,SOCRATES (DSS) Data,https://www.stats.govt.nz/integrated-data/integrated-data-infrastructure/,ok,200,,HEAD
+NZNEURO-001,ORS Students Under 21 (ID 25),https://www.educationcounts.govt.nz/statistics/ongoing-resourcing-scheme,http_error,403,Forbidden,GET

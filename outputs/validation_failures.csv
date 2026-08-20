@@ -1,0 +1,41 @@
+record_id,severity,field,issue
+NZNEURO-079,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-078,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-077,review,type_of_data,Recommended filter/enrichment field is blank
+NZNEURO-077,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-076,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-075,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-074,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-073,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-070,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-068,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-054,review,type_of_data,Recommended filter/enrichment field is blank
+NZNEURO-054,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-053,review,type_of_data,Recommended filter/enrichment field is blank
+NZNEURO-052,review,type_of_data,Recommended filter/enrichment field is blank
+NZNEURO-052,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-047,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-045,blocker,primary_link,Required public field is blank
+NZNEURO-043,blocker,primary_link,Required public field is blank
+NZNEURO-043,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-042,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-041,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-039,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-038,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-037,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-036,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-030,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-029,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-022,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-021,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-019,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-019,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-018,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-017,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-013,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-011,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-008,review,age_group,Recommended filter/enrichment field is blank
+NZNEURO-004,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-003,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-002,review,public_text,Contains Verification pending text that should remain internal unless approved
+NZNEURO-001,review,public_text,Contains Verification pending text that should remain internal unless approved

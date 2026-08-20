@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-08-20T01:09:59.002936+00:00",
+  "finished_at": "2026-08-20T01:11:46.999720+00:00",
+  "mode": "read_only_monitoring",
+  "collections": [
+    {
+      "collection_type": "catalogue",
+      "collection_name": "01 Catalogue Sources",
+      "collection_key": "VNEB8Z2T",
+      "items_fetched": 79,
+      "records_with_stable_id": 79
+    },
+    {
+      "collection_type": "evidence",
+      "collection_name": "02 Evidence Log",
+      "collection_key": "CI4SRMX3",
+      "items_fetched": 102,
+      "records_with_stable_id": 102
+    },
+    {
+      "collection_type": "taxonomy",
+      "collection_name": "03 Condition Taxonomy",
+      "collection_key": "Q3ZM44NE",
+      "items_fetched": 79,
+      "records_with_stable_id": 79
+    }
+  ],
+  "quality": {
+    "blocker_count": 2,
+    "review_count": 38,
+    "review_queue_count": 40,
+    "source_monitor_count": 20,
+    "candidate_record_count": 24,
+    "catalogue_link_checks": 79
+  },
+  "outputs": [
+    "outputs/zotero_cache.json",
+    "outputs/wordpress_neuro_resources.json",
+    "outputs/catalogue_completeness_report.csv",
+    "outputs/validation_failures.csv",
+    "outputs/review_queue.csv",
+    "outputs/changed_records.csv",
+    "outputs/candidate_records.csv",
+    "outputs/source_fetch_log.csv",
+    "outputs/catalogue_link_status.csv"
+  ]
+}
