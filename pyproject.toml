@@ -1,0 +1,10 @@
+[project]
+name = "neuronz-phase2-automation"
+version = "0.1.0"
+description = "Automation pipeline for NeuroNZ Zotero and WordPress-facing catalogue updates"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

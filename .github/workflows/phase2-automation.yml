@@ -1,0 +1,49 @@
+name: Phase 2 NeuroNZ automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  run-phase2-automation:
+    runs-on: ubuntu-latest
+    env:
+      ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+      PYTHONPATH: src
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Run read-only Zotero automation
+        run: python -m neuronz_automation.run_phase2
+
+      - name: Upload automation outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: neuronz-phase2-outputs
+          path: outputs/
+
+      - name: Commit changed outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "Update Phase 2 automation outputs"
+            git push
+          fi
