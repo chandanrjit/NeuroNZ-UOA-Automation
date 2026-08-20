@@ -67,7 +67,12 @@ def wordpress_record(record: dict[str, Any]) -> dict[str, Any]:
 def run() -> None:
     started_at = datetime.now(timezone.utc).isoformat()
     output_dir = Path(OUTPUT_DIR)
-    client = ZoteroClient(api_key=os.environ.get("ZOTERO_API_KEY"))
+    api_key = os.environ.get("ZOTERO_API_KEY")
+    if not api_key:
+        raise SystemExit(
+            "ZOTERO_API_KEY is required. Add it as a GitHub repository secret or export it locally before running."
+        )
+    client = ZoteroClient(api_key=api_key)
 
     cache: dict[str, list[dict[str, Any]]] = {}
     summary_collections: list[dict[str, Any]] = []
@@ -133,4 +138,3 @@ def run() -> None:
 
 if __name__ == "__main__":
     run()
-
