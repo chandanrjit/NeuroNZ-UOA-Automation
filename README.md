@@ -1,4 +1,4 @@
-# NeuroNZ Phase 2 Automation
+# NeuroNZ UOA Automation
 
 Private automation repository for keeping the NeuroNZ Zotero collection, QA reports, and WordPress-facing cache up to date.
 
@@ -52,4 +52,3 @@ It supports:
 ## Documentation
 
 Planning documents from the project repository are stored in `docs/`.
-
