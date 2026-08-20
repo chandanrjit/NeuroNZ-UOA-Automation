@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from json import JSONDecodeError
 from datetime import datetime, timezone
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -25,7 +26,7 @@ DATA_GOVT_QUERIES = [
 
 
 def fetch_json(url: str, timeout_seconds: int = 30) -> dict[str, Any]:
-    request = Request(url, headers={"User-Agent": USER_AGENT})
+    request = Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
     with urlopen(request, timeout=timeout_seconds) as response:
         return json.loads(response.read().decode("utf-8"))
 
@@ -76,7 +77,7 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
             }
         )
         summary = fetch_json(summary_url)
-    except (HTTPError, URLError, TimeoutError, RuntimeError) as exc:
+    except (HTTPError, URLError, TimeoutError, RuntimeError, JSONDecodeError) as exc:
         return [candidate_error("pubmed", str(exc))]
 
     result = summary.get("result", {})
@@ -115,7 +116,7 @@ def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, st
         )
         try:
             payload = fetch_json(url)
-        except (HTTPError, URLError, TimeoutError, RuntimeError) as exc:
+        except (HTTPError, URLError, TimeoutError, RuntimeError, JSONDecodeError) as exc:
             rows_by_url[f"error:{query}"] = candidate_error("data-govt-nz", f"{query}: {exc}")
             continue
 
@@ -145,4 +146,3 @@ def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, st
 
 def discover_candidates() -> list[dict[str, str]]:
     return discover_pubmed_candidates() + discover_data_govt_candidates()
-
