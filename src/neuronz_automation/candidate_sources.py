@@ -1,0 +1,148 @@
+"""Source-specific candidate discovery for Phase 2 automation."""
+
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+from typing import Any
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
+USER_AGENT = "NeuroNZ-UOA-Automation/0.1 (+https://github.com/chandanrjit/NeuroNZ-UOA-Automation)"
+
+PUBMED_QUERY = (
+    '("New Zealand"[Title/Abstract] OR Aotearoa[Title/Abstract]) AND '
+    "(stroke OR epilepsy OR dementia OR Parkinson OR neurological OR neurology)"
+)
+
+DATA_GOVT_QUERIES = [
+    "neurological",
+    "stroke",
+    "dementia",
+    "disability health",
+]
+
+
+def fetch_json(url: str, timeout_seconds: int = 30) -> dict[str, Any]:
+    request = Request(url, headers={"User-Agent": USER_AGENT})
+    with urlopen(request, timeout=timeout_seconds) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def candidate_error(source_id: str, message: str) -> dict[str, str]:
+    return {
+        "candidate_id": "",
+        "source_id": source_id,
+        "title": "",
+        "url": "",
+        "source_organisation": "",
+        "candidate_type": "source_error",
+        "detected_at": datetime.now(timezone.utc).isoformat(),
+        "doi": "",
+        "pmid": "",
+        "summary": "",
+        "condition_terms": "",
+        "status": "error",
+        "error_message": message,
+    }
+
+
+def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
+    detected_at = datetime.now(timezone.utc).isoformat()
+    search_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + urlencode(
+        {
+            "db": "pubmed",
+            "term": PUBMED_QUERY,
+            "retmode": "json",
+            "retmax": retmax,
+            "sort": "pub date",
+            "tool": "neuronz_uoa_automation",
+        }
+    )
+
+    try:
+        search = fetch_json(search_url)
+        pmids = search.get("esearchresult", {}).get("idlist", [])
+        if not pmids:
+            return []
+
+        summary_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?" + urlencode(
+            {
+                "db": "pubmed",
+                "id": ",".join(pmids),
+                "retmode": "json",
+                "tool": "neuronz_uoa_automation",
+            }
+        )
+        summary = fetch_json(summary_url)
+    except (HTTPError, URLError, TimeoutError, RuntimeError) as exc:
+        return [candidate_error("pubmed", str(exc))]
+
+    result = summary.get("result", {})
+    rows: list[dict[str, str]] = []
+    for pmid in pmids:
+        item = result.get(pmid, {})
+        if not item:
+            continue
+        rows.append(
+            {
+                "candidate_id": f"pubmed:{pmid}",
+                "source_id": "pubmed",
+                "title": item.get("title", ""),
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
+                "source_organisation": "PubMed/MEDLINE",
+                "candidate_type": "bibliographic_record",
+                "detected_at": detected_at,
+                "doi": "",
+                "pmid": pmid,
+                "summary": item.get("source", ""),
+                "condition_terms": "stroke; epilepsy; dementia; Parkinson; neurological",
+                "status": "candidate",
+                "error_message": "",
+            }
+        )
+    return rows
+
+
+def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, str]]:
+    detected_at = datetime.now(timezone.utc).isoformat()
+    rows_by_url: dict[str, dict[str, str]] = {}
+
+    for query in DATA_GOVT_QUERIES:
+        url = "https://catalogue.data.govt.nz/api/3/action/package_search?" + urlencode(
+            {"q": query, "rows": rows_per_query}
+        )
+        try:
+            payload = fetch_json(url)
+        except (HTTPError, URLError, TimeoutError, RuntimeError) as exc:
+            rows_by_url[f"error:{query}"] = candidate_error("data-govt-nz", f"{query}: {exc}")
+            continue
+
+        for package in payload.get("result", {}).get("results", []):
+            package_name = package.get("name", "")
+            page_url = f"https://catalogue.data.govt.nz/dataset/{package_name}" if package_name else ""
+            if not page_url or page_url in rows_by_url:
+                continue
+            rows_by_url[page_url] = {
+                "candidate_id": f"data-govt-nz:{package.get('id', package_name)}",
+                "source_id": "data-govt-nz",
+                "title": package.get("title") or package_name,
+                "url": page_url,
+                "source_organisation": package.get("organization", {}).get("title", "data.govt.nz"),
+                "candidate_type": "dataset_or_catalogue_record",
+                "detected_at": detected_at,
+                "doi": "",
+                "pmid": "",
+                "summary": (package.get("notes") or "")[:1000],
+                "condition_terms": query,
+                "status": "candidate",
+                "error_message": "",
+            }
+
+    return list(rows_by_url.values())
+
+
+def discover_candidates() -> list[dict[str, str]]:
+    return discover_pubmed_candidates() + discover_data_govt_candidates()
+

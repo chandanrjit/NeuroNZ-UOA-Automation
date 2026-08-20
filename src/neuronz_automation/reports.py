@@ -21,6 +21,12 @@ def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> 
         writer.writerows(rows)
 
 
+def read_json(path: Path, default: Any) -> Any:
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def completeness_rows(records: list[dict[str, Any]], fields: list[str]) -> list[dict[str, Any]]:
     total = len(records)
     rows: list[dict[str, Any]] = []
@@ -35,4 +41,3 @@ def completeness_rows(records: list[dict[str, Any]], fields: list[str]) -> list[
             }
         )
     return rows
-
