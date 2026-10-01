@@ -81,6 +81,10 @@ def pubmed_metadata(xml: str) -> dict[str, dict[str, str]]:
             ),
             "date": date, "creators": creators,
             "language": "; ".join(e.text or "" for e in article.findall(".//Article/Language")),
+            "PMID": pmid,
+            "PMCID": next((e.text or "" for e in article.findall(".//PubmedData/ArticleIdList/ArticleId") if e.get("IdType") == "pmc"), ""),
+            "rights": article.findtext(".//Article/Abstract/CopyrightInformation", ""),
+            "libraryCatalog": "PubMed",
         }
         records[pmid] = {
             "title": "".join(title.itertext()) if title is not None else "",
@@ -146,7 +150,7 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
                 "doi": full_records.get(pmid, {}).get("doi", ""),
                 "pmid": pmid,
                 "summary": full_records.get(pmid, {}).get("summary", ""),
-                "bibliography": full_records.get(pmid, {}).get("bibliography", "{}"),
+                "bibliography": json.dumps(dict(json.loads(full_records.get(pmid, {}).get("bibliography", "{}")), accessDate=detected_at)),
                 "condition_terms": "stroke; epilepsy; dementia; Parkinson; neurological",
                 "status": "candidate",
                 "error_message": "",

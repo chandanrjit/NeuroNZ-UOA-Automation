@@ -16,7 +16,7 @@ def normal_title(title: str) -> str:
     return re.sub(r"[^a-z0-9]", "", title.casefold())
 
 
-BIBLIOGRAPHY_FIELDS = ("publicationTitle", "creators", "date", "volume", "issue", "pages", "ISSN", "journalAbbreviation", "language")
+BIBLIOGRAPHY_FIELDS = ("publicationTitle", "creators", "date", "volume", "issue", "pages", "ISSN", "journalAbbreviation", "language", "PMID", "PMCID", "rights", "libraryCatalog", "accessDate")
 
 
 def bibliography(candidate: dict[str, str]) -> dict[str, Any]:
