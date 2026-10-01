@@ -9,7 +9,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from .config import ZOTERO_API_BASE, ZOTERO_USER_ID
+from .config import ZOTERO_API_BASE, ZOTERO_LIBRARY_ID, ZOTERO_LIBRARY_TYPE
 
 
 @dataclass(frozen=True)
@@ -37,7 +37,10 @@ class ZoteroClient:
             raise RuntimeError(f"Zotero API request failed: {exc.reason}") from exc
 
     def fetch_collection_items(self, collection_key: str, limit: int = 100) -> list[dict[str, Any]]:
-        path = f"/users/{ZOTERO_USER_ID}/collections/{collection_key}/items"
+        path = f"/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/collections/{collection_key}/items"
+        return self._get_all(path, limit)
+
+    def _get_all(self, path: str, limit: int = 100) -> list[dict[str, Any]]:
         all_items: list[dict[str, Any]] = []
         start = 0
 
@@ -56,3 +59,20 @@ class ZoteroClient:
                 return all_items
             start += limit
 
+    def fetch_collection_tree_items(self, collection_key: str) -> list[dict[str, Any]]:
+        """Read the selected collection and descendants; Zotero item reads are not recursive."""
+        prefix = f"/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/collections"
+        pending = [collection_key]
+        visited: set[str] = set()
+        items_by_key: dict[str, dict[str, Any]] = {}
+        while pending:
+            key = pending.pop()
+            if key in visited:
+                continue
+            visited.add(key)
+            for item in self.fetch_collection_items(key):
+                items_by_key[item["key"]] = item
+            for child in self._get_all(f"{prefix}/{key}/collections"):
+                if child["data"].get("name") != "04 Excluded Sources":
+                    pending.append(child["key"])
+        return list(items_by_key.values())

@@ -29,13 +29,11 @@ Zotero remains the primary integration source for WordPress.
 Current tested endpoints:
 
 ```text
-GET https://api.zotero.org/users/21117133/collections?format=json
-GET https://api.zotero.org/users/21117133/collections/VNEB8Z2T/items?format=json&include=data
-GET https://api.zotero.org/users/21117133/collections/CI4SRMX3/items?format=json&include=data
-GET https://api.zotero.org/users/21117133/collections/Q3ZM44NE/items?format=json&include=data
+GET https://api.zotero.org/groups/6643086/collections/PA2ESN45/items?format=json&include=data
+GET https://api.zotero.org/groups/6643086/collections/PA2ESN45/collections?format=json
 ```
 
-Automation should read existing Zotero records by stable IDs in `data.extra`:
+Automation reads the selected collection and descendants, deduplicates item keys, and classifies records by stable IDs in `data.extra`:
 
 | Collection | Stable ID field |
 |---|---|
@@ -191,4 +189,3 @@ Each run folder should contain:
 | `validation_failures.csv` | Records blocked by quality gates. |
 | `zotero_update_manifest.csv` | Zotero records created or updated. |
 | `completeness_report.csv` | Post-run field coverage. |
-

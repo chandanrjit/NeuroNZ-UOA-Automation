@@ -24,12 +24,12 @@ The pipeline should update the collection safely, but it should not publish low-
 
 | Asset | Current status |
 |---|---|
-| Zotero root collection | `NeuroNZ Collection` |
-| Zotero user library ID | `21117133` |
-| Catalogue collection | `01 Catalogue Sources`, key `VNEB8Z2T`, 79 items |
-| Evidence collection | `02 Evidence Log`, key `CI4SRMX3`, 102 items |
-| Condition taxonomy collection | `03 Condition Taxonomy`, key `Q3ZM44NE`, 79 items |
-| Excluded sources collection | `04 Excluded Sources`, key `KICKW4WS`, 0 items |
+| Zotero selected collection | `NeuroNZ_Shared_Collection`, key `PA2ESN45`, in NZ Neuro Data Catalogue |
+| Zotero group library ID | `6643086` |
+| Catalogue sources | `WP3UEC3K`, 79 items observed on 2 October 2026 |
+| Evidence log | `KFGR6AVK`, 102 items observed on 2 October 2026 |
+| Condition taxonomy | `8PK2SCDR`, 79 items observed on 2 October 2026 |
+| Excluded sources | Descendant collections named `04 Excluded Sources` are skipped |
 | Local cleaned workbook | `NZ_Neuro_Data_Catalogue_Phase1A_Clean.xlsx` |
 | Clean catalogue export | `NeuroNZ-Phase1-Collection/catalogue_phase1_clean.csv` |
 | Clean evidence export | `NeuroNZ-Phase1-Collection/evidence_log_phase1_clean.csv` |
@@ -76,4 +76,3 @@ The first automation work should target the known remaining gaps:
 ## 6. Security rule
 
 Do not store Zotero API keys, WordPress credentials, GitHub tokens, or database credentials in this folder. Use environment variables, GitHub secrets, or WordPress secret/config storage.
-

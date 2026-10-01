@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from .candidate_sources import discover_candidates
-from .config import COLLECTIONS, OUTPUT_DIR
+from .config import COLLECTIONS, OUTPUT_DIR, ZOTERO_COLLECTION_KEY, ZOTERO_LIBRARY_ID, ZOTERO_LIBRARY_TYPE
 from .parsing import extract_doi, extract_pmid, extract_tags, parse_extra
 from .quality import changed_record_rows, review_queue_rows, validation_rows
 from .reports import completeness_rows, read_json, write_csv, write_json
@@ -67,6 +67,24 @@ def wordpress_record(record: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def partition_items(items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    buckets: dict[str, list[dict[str, Any]]] = {kind: [] for kind in COLLECTIONS}
+    for item in items:
+        data = item.get("data") or {}
+        if data.get("itemType") in {"attachment", "note", "annotation"}:
+            continue
+        extra = parse_extra(data.get("extra"))
+        # Evidence may also reference a catalogue ID; use its own ID first.
+        for kind in ("evidence", "taxonomy", "catalogue"):
+            if extra.get(COLLECTIONS[kind]["stable_id_field"]):
+                buckets[kind].append(item)
+                break
+        else:
+            # Keep unclassified records visible to the missing-ID quality gate.
+            buckets["catalogue"].append(item)
+    return buckets
+
+
 def run() -> None:
     started_at = datetime.now(timezone.utc).isoformat()
     output_dir = Path(OUTPUT_DIR)
@@ -80,16 +98,17 @@ def run() -> None:
 
     cache: dict[str, list[dict[str, Any]]] = {}
     summary_collections: list[dict[str, Any]] = []
+    items_by_type = partition_items(client.fetch_collection_tree_items(ZOTERO_COLLECTION_KEY))
 
     for collection_type, config in COLLECTIONS.items():
-        items = client.fetch_collection_items(config["key"])
+        items = items_by_type[collection_type]
         records = [normalise_zotero_item(item, config["stable_id_field"]) for item in items]
         cache[collection_type] = records
         summary_collections.append(
             {
                 "collection_type": collection_type,
                 "collection_name": config["name"],
-                "collection_key": config["key"],
+                "collection_key": ZOTERO_COLLECTION_KEY,
                 "items_fetched": len(records),
                 "records_with_stable_id": sum(1 for record in records if record["stable_id"]),
             }
@@ -204,6 +223,9 @@ def run() -> None:
             "started_at": started_at,
             "finished_at": finished_at,
             "mode": "read_only_monitoring",
+            "zotero_library_type": ZOTERO_LIBRARY_TYPE,
+            "zotero_library_id": ZOTERO_LIBRARY_ID,
+            "zotero_collection_key": ZOTERO_COLLECTION_KEY,
             "collections": summary_collections,
             "quality": {
                 "blocker_count": blocker_count,

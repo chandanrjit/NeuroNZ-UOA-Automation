@@ -1,7 +1,5 @@
 source_id,source_name,source_type,primary_url,automation_method,phase2_priority,notes
-zotero-catalogue,NeuroNZ Zotero catalogue collection,Zotero API,https://api.zotero.org/users/21117133/collections/VNEB8Z2T/items?format=json&include=data,Zotero Web API,1,Primary collection source for catalogue records
-zotero-evidence,NeuroNZ Zotero evidence collection,Zotero API,https://api.zotero.org/users/21117133/collections/CI4SRMX3/items?format=json&include=data,Zotero Web API,1,Primary collection source for evidence records
-zotero-taxonomy,NeuroNZ Zotero condition taxonomy collection,Zotero API,https://api.zotero.org/users/21117133/collections/Q3ZM44NE/items?format=json&include=data,Zotero Web API,1,Primary source for condition taxonomy records
+zotero-neuronz,NZ Neuro Data Catalogue selected collection,Zotero API,https://api.zotero.org/groups/6643086/collections/PA2ESN45/items?format=json&include=data,Zotero Web API,1,Selected collection and descendants read by ZoteroClient
 data-govt-nz,data.govt.nz,NZ data catalogue,https://catalogue.data.govt.nz/,CKAN API or catalogue API,1,Monitor for NZ public datasets relevant to neurological conditions and disability
 health-nz,Health New Zealand Te Whatu Ora,NZ public health source,https://www.tewhatuora.govt.nz/,RSS sitemap or scheduled page monitor,1,Monitor publications datasets service pages and national health information
 ministry-health,Ministry of Health,NZ government source,https://www.health.govt.nz/,RSS sitemap or scheduled page monitor,1,Monitor reports statistics publications and data releases
@@ -19,4 +17,3 @@ neurological-foundation,Neurological Foundation,NZ NGO/research source,https://n
 multiple-sclerosis-nz,Multiple Sclerosis New Zealand,NZ NGO/source,https://www.msnz.org.nz/,Scheduled page monitor,3,Monitor support/service/source changes for MS-related entries
 parkinsons-nz,Parkinson's New Zealand,NZ NGO/source,https://www.parkinsons.org.nz/,Scheduled page monitor,3,Monitor support/service/source changes for Parkinson's-related entries
 alzheimers-nz,Alzheimers New Zealand,NZ NGO/source,https://alzheimers.org.nz/,Scheduled page monitor,3,Monitor dementia-related public resource changes
-
