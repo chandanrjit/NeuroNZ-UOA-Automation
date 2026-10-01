@@ -95,7 +95,7 @@ def pubmed_metadata(xml: str) -> dict[str, dict[str, str]]:
     return records
 
 
-def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
+def discover_pubmed_candidates(retmax: int = 20, existing_pmids: list[str] | None = None) -> list[dict[str, str]]:
     detected_at = datetime.now(timezone.utc).isoformat()
     search_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + urlencode(
         {
@@ -110,7 +110,7 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
 
     try:
         search = fetch_json(search_url)
-        pmids = search.get("esearchresult", {}).get("idlist", [])
+        pmids = list(dict.fromkeys(search.get("esearchresult", {}).get("idlist", []) + (existing_pmids or [])))
         if not pmids:
             return []
 
@@ -150,8 +150,8 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
                 "doi": full_records.get(pmid, {}).get("doi", ""),
                 "pmid": pmid,
                 "summary": full_records.get(pmid, {}).get("summary", ""),
-                "bibliography": json.dumps(dict(json.loads(full_records.get(pmid, {}).get("bibliography", "{}")), accessDate=detected_at)),
-                "condition_terms": "stroke; epilepsy; dementia; Parkinson; neurological",
+                "bibliography": json.dumps(dict(json.loads(full_records.get(pmid, {}).get("bibliography", "{}")), accessDate=datetime.fromisoformat(detected_at).strftime("%Y-%m-%d %H:%M:%S"))),
+                "condition_terms": "",
                 "status": "candidate",
                 "error_message": "",
             }
@@ -173,6 +173,9 @@ def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, st
             rows_by_url[f"error:{query}"] = candidate_error("data-govt-nz", f"{query}: {exc}")
             continue
 
+        if payload.get("success") is not True:
+            rows_by_url[f"error:{query}"] = candidate_error("data-govt-nz", f"{query}: CKAN returned success=false")
+            continue
         for package in payload.get("result", {}).get("results", []):
             package_name = package.get("name", "")
             page_url = f"https://catalogue.data.govt.nz/dataset/{package_name}" if package_name else ""
@@ -188,8 +191,13 @@ def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, st
                 "detected_at": detected_at,
                 "doi": "",
                 "pmid": "",
-                "summary": (package.get("notes") or "")[:1000],
-                "condition_terms": query,
+                "summary": package.get("notes") or "",
+                "condition_terms": "",
+                "bibliography": json.dumps({"websiteTitle": "data.govt.nz", "date": package.get("metadata_modified", "")[:10],
+                    "accessDate": datetime.fromisoformat(detected_at).strftime("%Y-%m-%d %H:%M:%S"), "libraryCatalog": "data.govt.nz"}),
+                "dataset_metadata": json.dumps({"private": package.get("private"), "license": package.get("license_title") or package.get("license_id", ""),
+                    "resources": [r["url"] for r in package.get("resources", []) if r.get("url", "").startswith("https://")],
+                    "language": package.get("language", "")}),
                 "status": "candidate",
                 "error_message": "",
             }
@@ -197,5 +205,5 @@ def discover_data_govt_candidates(rows_per_query: int = 10) -> list[dict[str, st
     return list(rows_by_url.values())
 
 
-def discover_candidates() -> list[dict[str, str]]:
-    return discover_pubmed_candidates() + discover_data_govt_candidates()
+def discover_candidates(existing_pmids: list[str] | None = None) -> list[dict[str, str]]:
+    return discover_pubmed_candidates(existing_pmids=existing_pmids) + discover_data_govt_candidates()

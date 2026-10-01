@@ -1,4 +1,6 @@
 import unittest
+from io import BytesIO
+from urllib.error import HTTPError
 from unittest.mock import patch
 
 from neuronz_automation.run_phase2 import partition_items
@@ -6,6 +8,18 @@ from neuronz_automation.zotero_client import ZoteroClient
 
 
 class GroupCollectionTests(unittest.TestCase):
+    def test_patch_exposes_api_validation_error(self):
+        error = HTTPError("https://api.zotero.org", 400, "Bad Request", {}, BytesIO(b"Invalid accessDate"))
+        with patch("neuronz_automation.zotero_client.urlopen", side_effect=error):
+            with self.assertRaisesRegex(RuntimeError, "Invalid accessDate"):
+                ZoteroClient().patch_item("ITEM", 3, {"publicationTitle": "Journal"})
+
+    def test_invalid_access_date_rejected_before_network(self):
+        with patch("neuronz_automation.zotero_client.urlopen") as request:
+            with self.assertRaises(ValueError):
+                ZoteroClient().patch_item("ITEM", 3, {"accessDate": "2026-10-02T00:00:00+00:00"})
+            request.assert_not_called()
+
     def test_group_path_and_pagination(self):
         client = ZoteroClient()
         with patch.object(ZoteroClient, "_get_json", side_effect=[[{"key": "A"}], []]) as get:

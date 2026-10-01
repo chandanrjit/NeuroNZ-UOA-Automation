@@ -15,6 +15,7 @@ from .reports import completeness_rows, read_json, write_csv, write_json
 from .source_monitor import check_url, monitor_registered_sources
 from .zotero_client import ZoteroClient
 from .zotero_updates import update_candidates
+from .taxonomy import audit_items
 
 
 def normalise_zotero_item(item: dict[str, Any], stable_id_field: str) -> dict[str, Any]:
@@ -39,6 +40,10 @@ def normalise_zotero_item(item: dict[str, Any], stable_id_field: str) -> dict[st
         "date": data.get("date", ""),
         "tags": extract_tags(data),
         "extra": extra,
+        "bibliography": {field: data.get(field) for field in ("publicationTitle", "creators", "date", "volume", "issue", "pages", "ISSN", "DOI", "journalAbbreviation", "language", "PMID", "PMCID", "rights", "libraryCatalog", "accessDate")},
+        "date_added": data.get("dateAdded", ""),
+        "date_modified": data.get("dateModified", ""),
+        "condition_ids": [value.strip() for value in extra.get("NeuroNZ Condition IDs", "").split(";") if value.strip()],
     }
 
 
@@ -65,6 +70,7 @@ def wordpress_record(record: dict[str, Any]) -> dict[str, Any]:
         "doi": record["doi"],
         "pmid": record["pmid"],
         "zotero_tags": record["tags"],
+        "condition_ids": record.get("condition_ids", []),
     }
 
 
@@ -96,13 +102,24 @@ def run() -> None:
         )
     client = ZoteroClient(api_key=api_key)
     source_registry_path = Path("docs/source_registry.csv")
-    candidate_records = discover_candidates()
+    initial_items = client.fetch_collection_tree_items(ZOTERO_COLLECTION_KEY)
+    owned_pmids = [extract_pmid(item.get("data", {}).get("url"), item.get("data", {}).get("extra")) for item in initial_items
+                   if "nzneuro:phase2" in extract_tags(item.get("data", {}))]
+    candidate_records = discover_candidates([pmid for pmid in owned_pmids if pmid])
     write_enabled = os.environ.get("ZOTERO_WRITE_ENABLED", "false").lower() == "true"
-    update_manifest = update_candidates(client, candidate_records, output_dir) if write_enabled else []
+    write_json(output_dir / "latest_run_summary.json", {"started_at": started_at, "status": "running", "github_run_id": os.environ.get("GITHUB_RUN_ID")})
+    try:
+        update_manifest = update_candidates(client, candidate_records, output_dir) if write_enabled else []
+    except Exception as exc:
+        write_json(output_dir / "latest_run_summary.json", {"started_at": started_at, "finished_at": datetime.now(timezone.utc).isoformat(),
+            "status": "failed", "error": str(exc), "github_run_id": os.environ.get("GITHUB_RUN_ID"), "manifest": "outputs/zotero_update_manifest.json"})
+        raise
 
     cache: dict[str, list[dict[str, Any]]] = {}
     summary_collections: list[dict[str, Any]] = []
     items_by_type = partition_items(client.fetch_collection_tree_items(ZOTERO_COLLECTION_KEY))
+    gap_audit = audit_items([item for items in items_by_type.values() for item in items], items_by_type["taxonomy"])
+    write_json(output_dir / "metadata_taxonomy_audit.json", gap_audit)
 
     for collection_type, config in COLLECTIONS.items():
         items = items_by_type[collection_type]
@@ -140,6 +157,10 @@ def run() -> None:
     ]
     validation = validation_rows(catalogue_records)
     review_queue = review_queue_rows(validation)
+    review_queue += [{"record_id": row["candidate_id"], "severity": "review", "field": "candidate", "issue": row.get("reason", "Review required")}
+                     for row in update_manifest if row["status"] == "review"]
+    review_queue += [{"record_id": row["zotero_key"], "severity": "review", "field": "metadata_taxonomy", "issue": "; ".join(row["gaps"])}
+                     for row in gap_audit if row["gaps"]]
     changed_records = changed_record_rows(previous_catalogue_records, catalogue_records)
     source_fetch_log = monitor_registered_sources(source_registry_path)
     link_status_rows = [
@@ -189,6 +210,7 @@ def run() -> None:
             "pmid",
             "summary",
             "bibliography",
+            "dataset_metadata",
             "condition_terms",
             "status",
             "error_message",
@@ -225,6 +247,9 @@ def run() -> None:
         output_dir / "latest_run_summary.json",
         {
             "started_at": started_at,
+            "status": "completed_with_review" if review_queue else "completed",
+            "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+            "unresolved_gap_records": sum(bool(row["gaps"]) for row in gap_audit),
             "finished_at": finished_at,
             "mode": "validated_evidence_import" if write_enabled else "read_only_monitoring",
             "zotero_updates": {

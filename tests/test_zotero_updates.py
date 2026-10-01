@@ -16,6 +16,28 @@ def candidate():
 
 
 class ZoteroUpdateTests(unittest.TestCase):
+    def test_dataset_import_writes_to_catalogue_and_verifies_condition(self):
+        client = self.client()
+        client.fetch_child_collections.return_value += [
+            {"key": "CAT", "data": {"name": "01 Catalogue Sources"}},
+            {"key": "TAX", "data": {"name": "03 Condition Taxonomy"}}]
+        client.fetch_library_items.return_value += [{"key": "STROKE", "data": {
+            "title": "Stroke", "collections": ["TAX"], "extra": "NeuroNZ Condition ID: NC-072"}}]
+        row = {"candidate_id": "data-govt-nz:abc", "source_id": "data-govt-nz", "status": "candidate",
+            "title": "Stroke dataset", "summary": "New Zealand stroke data", "source_organisation": "NZ agency",
+            "url": "https://catalogue.data.govt.nz/dataset/stroke", "dataset_metadata": json.dumps({"private": False,
+                "resources": ["https://example.org/data.csv"], "license": "CC BY"})}
+        def readback(key):
+            data = deepcopy(client.create_item.call_args.args[0])
+            data.update(dateAdded="2026-10-02T00:00:00Z", dateModified="2026-10-02T00:00:00Z")
+            return {"key": key, "version": 3, "data": data}
+        client.fetch_item.side_effect = readback
+        with tempfile.TemporaryDirectory() as directory:
+            rows = update_candidates(client, [row, row], Path(directory))
+        self.assertEqual([r["status"] for r in rows], ["created_verified", "duplicate"])
+        self.assertEqual(client.create_item.call_args.args[0]["collections"], ["CAT"])
+        self.assertIn("NeuroNZ Condition IDs: NC-072", client.create_item.call_args.args[0]["extra"])
+
     def client(self):
         client = Mock()
         client.fetch_child_collections.return_value = [{"key": "KFGR6AVK", "data": {"name": "02 Evidence Log"}}]

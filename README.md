@@ -24,6 +24,8 @@ Imports require a verified journal title, authors, and publication date in addit
 
 Candidates that fail relevance checks and data.govt.nz datasets that need catalogue metadata review remain in the review manifest. Source failures are logged and are never imported.
 
+Public data.govt.nz datasets can now be imported into Catalogue Sources when their NZ context, controlled condition, organisation, licence and resource URLs are verified. Condition classification uses actual taxonomy names and reviewed aliases; uncertain conditions remain in review. Existing imported PubMed IDs are rechecked independently of the newest search results. Each run emits metadata_taxonomy_audit.json and includes candidate and taxonomy gaps in review_queue.csv. See docs/gap_register.md for remaining live acceptance and data-review work.
+
 ## Zotero target
 
 Source: https://www.zotero.org/groups/6643086/nz_neuro_data_catalogue/collections/PA2ESN45/collection
