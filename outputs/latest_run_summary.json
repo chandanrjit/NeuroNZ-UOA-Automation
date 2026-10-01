@@ -1,26 +1,29 @@
 {
-  "started_at": "2026-09-27T20:32:02.915017+00:00",
-  "finished_at": "2026-09-27T20:34:09.138541+00:00",
+  "started_at": "2026-10-01T23:33:56.717734+00:00",
+  "finished_at": "2026-10-01T23:35:41.465108+00:00",
   "mode": "read_only_monitoring",
+  "zotero_library_type": "groups",
+  "zotero_library_id": "6643086",
+  "zotero_collection_key": "PA2ESN45",
   "collections": [
     {
       "collection_type": "catalogue",
       "collection_name": "01 Catalogue Sources",
-      "collection_key": "VNEB8Z2T",
+      "collection_key": "PA2ESN45",
       "items_fetched": 79,
       "records_with_stable_id": 79
     },
     {
       "collection_type": "evidence",
       "collection_name": "02 Evidence Log",
-      "collection_key": "CI4SRMX3",
+      "collection_key": "PA2ESN45",
       "items_fetched": 102,
       "records_with_stable_id": 102
     },
     {
       "collection_type": "taxonomy",
       "collection_name": "03 Condition Taxonomy",
-      "collection_key": "Q3ZM44NE",
+      "collection_key": "PA2ESN45",
       "items_fetched": 79,
       "records_with_stable_id": 79
     }
@@ -29,7 +32,7 @@
     "blocker_count": 2,
     "review_count": 38,
     "review_queue_count": 40,
-    "source_monitor_count": 20,
+    "source_monitor_count": 18,
     "candidate_record_count": 24,
     "catalogue_link_checks": 79
   },
