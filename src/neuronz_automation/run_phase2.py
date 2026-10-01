@@ -14,6 +14,7 @@ from .quality import changed_record_rows, review_queue_rows, validation_rows
 from .reports import completeness_rows, read_json, write_csv, write_json
 from .source_monitor import check_url, monitor_registered_sources
 from .zotero_client import ZoteroClient
+from .zotero_updates import update_candidates
 
 
 def normalise_zotero_item(item: dict[str, Any], stable_id_field: str) -> dict[str, Any]:
@@ -95,6 +96,9 @@ def run() -> None:
         )
     client = ZoteroClient(api_key=api_key)
     source_registry_path = Path("docs/source_registry.csv")
+    candidate_records = discover_candidates()
+    write_enabled = os.environ.get("ZOTERO_WRITE_ENABLED", "false").lower() == "true"
+    update_manifest = update_candidates(client, candidate_records, output_dir) if write_enabled else []
 
     cache: dict[str, list[dict[str, Any]]] = {}
     summary_collections: list[dict[str, Any]] = []
@@ -138,7 +142,6 @@ def run() -> None:
     review_queue = review_queue_rows(validation)
     changed_records = changed_record_rows(previous_catalogue_records, catalogue_records)
     source_fetch_log = monitor_registered_sources(source_registry_path)
-    candidate_records = discover_candidates()
     link_status_rows = [
         {
             "record_id": record["record_id"],
@@ -222,7 +225,13 @@ def run() -> None:
         {
             "started_at": started_at,
             "finished_at": finished_at,
-            "mode": "read_only_monitoring",
+            "mode": "validated_evidence_import" if write_enabled else "read_only_monitoring",
+            "zotero_updates": {
+                "created_verified": sum(row["status"] == "created_verified" for row in update_manifest),
+                "duplicates": sum(row["status"] == "duplicate" for row in update_manifest),
+                "review": sum(row["status"] == "review" for row in update_manifest),
+                "manifest": "outputs/zotero_update_manifest.json" if write_enabled else None,
+            },
             "zotero_library_type": ZOTERO_LIBRARY_TYPE,
             "zotero_library_id": ZOTERO_LIBRARY_ID,
             "zotero_collection_key": ZOTERO_COLLECTION_KEY,

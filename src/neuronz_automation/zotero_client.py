@@ -8,6 +8,7 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from uuid import uuid4
 
 from .config import ZOTERO_API_BASE, ZOTERO_LIBRARY_ID, ZOTERO_LIBRARY_TYPE
 
@@ -76,3 +77,26 @@ class ZoteroClient:
                 if child["data"].get("name") != "04 Excluded Sources":
                     pending.append(child["key"])
         return list(items_by_key.values())
+
+    def fetch_library_items(self) -> list[dict[str, Any]]:
+        return self._get_all(f"/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/items")
+
+    def fetch_item(self, key: str) -> dict[str, Any]:
+        return self._get_json(f"/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/items/{key}", {"format": "json"})
+
+    def fetch_child_collections(self, key: str) -> list[dict[str, Any]]:
+        return self._get_all(f"/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/collections/{key}/collections")
+
+    def create_item(self, item: dict[str, Any]) -> dict[str, Any]:
+        headers = self._headers()
+        headers.update({"Content-Type": "application/json", "Zotero-Write-Token": uuid4().hex})
+        request = Request(
+            f"{ZOTERO_API_BASE}/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/items",
+            data=json.dumps([item]).encode("utf-8"), headers=headers, method="POST",
+        )
+        # No automatic replay: a lost response requires inspection before another write.
+        with urlopen(request, timeout=self.timeout_seconds) as response:
+            result = json.loads(response.read().decode("utf-8"))
+        if result.get("failed") or "0" not in result.get("successful", {}):
+            raise RuntimeError(f"Zotero item creation rejected: {result.get('failed', {})}")
+        return result["successful"]["0"]

@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from json import JSONDecodeError
 from datetime import datetime, timezone
+import xml.etree.ElementTree as ET
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -49,6 +50,19 @@ def candidate_error(source_id: str, message: str) -> dict[str, str]:
     }
 
 
+def pubmed_metadata(xml: str) -> dict[str, dict[str, str]]:
+    records = {}
+    for article in ET.fromstring(xml).findall(".//PubmedArticle"):
+        pmid = article.findtext(".//MedlineCitation/PMID", "")
+        title = article.find(".//ArticleTitle")
+        records[pmid] = {
+            "title": "".join(title.itertext()) if title is not None else "",
+            "summary": "\n".join("".join(e.itertext()) for e in article.findall(".//AbstractText")),
+            "doi": next((e.text or "" for e in article.findall(".//PubmedData/ArticleIdList/ArticleId") if e.get("IdType") == "doi"), ""),
+        }
+    return records
+
+
 def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
     detected_at = datetime.now(timezone.utc).isoformat()
     search_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + urlencode(
@@ -77,7 +91,13 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
             }
         )
         summary = fetch_json(summary_url)
-    except (HTTPError, URLError, TimeoutError, RuntimeError, JSONDecodeError) as exc:
+        full_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?" + urlencode(
+            {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml", "tool": "neuronz_uoa_automation"}
+        )
+        request = Request(full_url, headers={"User-Agent": USER_AGENT})
+        with urlopen(request, timeout=30) as response:
+            full_records = pubmed_metadata(response.read().decode("utf-8"))
+    except (HTTPError, URLError, TimeoutError, RuntimeError, JSONDecodeError, ET.ParseError) as exc:
         return [candidate_error("pubmed", str(exc))]
 
     result = summary.get("result", {})
@@ -90,14 +110,14 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
             {
                 "candidate_id": f"pubmed:{pmid}",
                 "source_id": "pubmed",
-                "title": item.get("title", ""),
+                "title": full_records.get(pmid, {}).get("title", ""),
                 "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
                 "source_organisation": "PubMed/MEDLINE",
                 "candidate_type": "bibliographic_record",
                 "detected_at": detected_at,
-                "doi": "",
+                "doi": full_records.get(pmid, {}).get("doi", ""),
                 "pmid": pmid,
-                "summary": item.get("source", ""),
+                "summary": full_records.get(pmid, {}).get("summary", ""),
                 "condition_terms": "stroke; epilepsy; dementia; Parkinson; neurological",
                 "status": "candidate",
                 "error_message": "",

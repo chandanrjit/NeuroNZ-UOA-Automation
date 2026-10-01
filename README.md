@@ -4,7 +4,7 @@ Private automation repository for keeping the NeuroNZ Zotero collection, QA repo
 
 ## What this repo does first
 
-The first implementation is a safe read-only automation run:
+The pipeline imports validated new PubMed evidence and refreshes monitoring outputs:
 
 1. fetches group `6643086`, collection `PA2ESN45` and its descendants,
 2. parses stable NeuroNZ IDs from Zotero `extra`,
@@ -18,9 +18,9 @@ The first implementation is a safe read-only automation run:
 10. checks catalogue primary links,
 11. writes a run summary for dissertation/evaluation evidence.
 
-It does **not** write to Zotero yet. Write/update automation should be added only after these validation gates and review queues are stable.
+GitHub Actions enables `ZOTERO_WRITE_ENABLED=true`. New PubMed papers with verified abstracts, clear NZ and neurological relevance, and no matching DOI, PMID, URL, or title in the group library are added to `02 Evidence Log`. Every created item is read back and logged with its Zotero key, evidence ID, `dateAdded`, and `dateModified` in `outputs/zotero_update_manifest.json`. Existing items are preserved. Concurrent pipeline runs are serialized.
 
-External source automation currently starts candidate discovery with PubMed and data.govt.nz. Candidates are staged in CSV for review; they are not written into Zotero automatically yet.
+Candidates that fail relevance checks and data.govt.nz datasets that need catalogue metadata review remain in the review manifest. Source failures are logged and are never imported.
 
 ## Zotero target
 
@@ -34,7 +34,7 @@ Add this GitHub repository secret:
 
 | Secret | Purpose |
 |---|---|
-| `ZOTERO_API_KEY` | Zotero API key with read access to group `6643086` |
+| `ZOTERO_API_KEY` | Zotero API key with read and write access to group `6643086` |
 
 Do not commit API keys or WordPress credentials.
 
@@ -46,6 +46,7 @@ python3 -m neuronz_automation.run_phase2
 ```
 
 Outputs are written to `outputs/`.
+Local runs remain read-only unless `ZOTERO_WRITE_ENABLED=true` is explicitly set.
 
 Main outputs:
 

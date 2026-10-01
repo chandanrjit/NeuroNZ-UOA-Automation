@@ -8,12 +8,17 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: neuronz-zotero-update
+  cancel-in-progress: false
+
 jobs:
   run-phase2-automation:
     runs-on: ubuntu-latest
     env:
       ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
       PYTHONPATH: src
+      ZOTERO_WRITE_ENABLED: "true"
 
     steps:
       - name: Check out repository
@@ -27,10 +32,11 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -p "test_*.py"
 
-      - name: Run read-only Zotero and source monitoring automation
+      - name: Import validated evidence into Zotero and refresh reports
         run: python -m neuronz_automation.run_phase2
 
       - name: Upload automation outputs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: neuronz-phase2-outputs
