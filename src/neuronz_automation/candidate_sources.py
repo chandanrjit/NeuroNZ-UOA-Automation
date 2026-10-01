@@ -55,10 +55,38 @@ def pubmed_metadata(xml: str) -> dict[str, dict[str, str]]:
     for article in ET.fromstring(xml).findall(".//PubmedArticle"):
         pmid = article.findtext(".//MedlineCitation/PMID", "")
         title = article.find(".//ArticleTitle")
+        journal = article.find(".//Article/Journal")
+        pubdate = journal.find("JournalIssue/PubDate") if journal is not None else None
+        date = ""
+        if pubdate is not None:
+            date = pubdate.findtext("MedlineDate", "") or "-".join(
+                pubdate.findtext(field, "") for field in ("Year", "Month", "Day") if pubdate.findtext(field)
+            )
+        creators = []
+        for author in article.findall(".//Article/AuthorList/Author"):
+            collective = author.findtext("CollectiveName")
+            if collective:
+                creators.append({"creatorType": "author", "name": collective})
+            elif author.findtext("LastName"):
+                creators.append({"creatorType": "author", "firstName": author.findtext("ForeName") or author.findtext("Initials", ""), "lastName": author.findtext("LastName")})
+        bibliography = {
+            "publicationTitle": journal.findtext("Title", "") if journal is not None else "",
+            "journalAbbreviation": journal.findtext("ISOAbbreviation", "") if journal is not None else "",
+            "volume": journal.findtext("JournalIssue/Volume", "") if journal is not None else "",
+            "issue": journal.findtext("JournalIssue/Issue", "") if journal is not None else "",
+            "ISSN": journal.findtext("ISSN", "") if journal is not None else "",
+            "pages": article.findtext(".//Article/Pagination/MedlinePgn", "") or "-".join(
+                article.findtext(".//Article/Pagination/" + field, "")
+                for field in ("StartPage", "EndPage") if article.findtext(".//Article/Pagination/" + field)
+            ),
+            "date": date, "creators": creators,
+            "language": "; ".join(e.text or "" for e in article.findall(".//Article/Language")),
+        }
         records[pmid] = {
             "title": "".join(title.itertext()) if title is not None else "",
             "summary": "\n".join("".join(e.itertext()) for e in article.findall(".//AbstractText")),
             "doi": next((e.text or "" for e in article.findall(".//PubmedData/ArticleIdList/ArticleId") if e.get("IdType") == "doi"), ""),
+            "bibliography": json.dumps(bibliography, ensure_ascii=False),
         }
     return records
 
@@ -118,6 +146,7 @@ def discover_pubmed_candidates(retmax: int = 20) -> list[dict[str, str]]:
                 "doi": full_records.get(pmid, {}).get("doi", ""),
                 "pmid": pmid,
                 "summary": full_records.get(pmid, {}).get("summary", ""),
+                "bibliography": full_records.get(pmid, {}).get("bibliography", "{}"),
                 "condition_terms": "stroke; epilepsy; dementia; Parkinson; neurological",
                 "status": "candidate",
                 "error_message": "",

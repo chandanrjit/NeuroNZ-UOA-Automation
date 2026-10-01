@@ -188,6 +188,7 @@ def run() -> None:
             "doi",
             "pmid",
             "summary",
+            "bibliography",
             "condition_terms",
             "status",
             "error_message",
@@ -228,6 +229,7 @@ def run() -> None:
             "mode": "validated_evidence_import" if write_enabled else "read_only_monitoring",
             "zotero_updates": {
                 "created_verified": sum(row["status"] == "created_verified" for row in update_manifest),
+                "metadata_updated_verified": sum(row["status"] == "metadata_updated_verified" for row in update_manifest),
                 "duplicates": sum(row["status"] == "duplicate" for row in update_manifest),
                 "review": sum(row["status"] == "review" for row in update_manifest),
                 "manifest": "outputs/zotero_update_manifest.json" if write_enabled else None,

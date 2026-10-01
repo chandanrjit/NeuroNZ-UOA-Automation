@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import json
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,19 @@ from .reports import write_json
 
 def normal_title(title: str) -> str:
     return re.sub(r"[^a-z0-9]", "", title.casefold())
+
+
+BIBLIOGRAPHY_FIELDS = ("publicationTitle", "creators", "date", "volume", "issue", "pages", "ISSN", "journalAbbreviation", "language")
+
+
+def bibliography(candidate: dict[str, str]) -> dict[str, Any]:
+    source = json.loads(candidate.get("bibliography") or "{}")
+    return {field: source[field] for field in BIBLIOGRAPHY_FIELDS if source.get(field)}
+
+
+def verify_fields(data: dict[str, Any], fields: dict[str, Any]) -> None:
+    if any(data.get(field) != value for field, value in fields.items()):
+        raise RuntimeError("Zotero bibliography readback did not match the verified source")
 
 
 def duplicate_tokens(data: dict[str, Any]) -> set[str]:
@@ -76,7 +90,39 @@ def update_candidates(client: Any, candidates: list[dict[str, str]], output_dir:
     for candidate in candidates:
         row = {"candidate_id": candidate.get("candidate_id", ""), "title": candidate.get("title", ""), "collection_key": target}
         reason = relevance_issue(candidate)
+        fields = bibliography(candidate)
         tokens = duplicate_tokens({"title": candidate.get("title", ""), "url": candidate.get("url", ""), "DOI": candidate.get("doi", "")})
+        # Repair only our own imported evidence with the exact PMID in this collection.
+        matches = [item for item in existing if target in item.get("data", {}).get("collections", [])
+                   and item.get("data", {}).get("itemType") == "journalArticle"
+                   and any(tag.get("tag") == "nzneuro:phase2" for tag in item.get("data", {}).get("tags", []))
+                   and extract_pmid(item["data"].get("url", ""), item["data"].get("extra", "")) == candidate.get("pmid")]
+        if not reason and len(matches) == 1:
+            current = client.fetch_item(matches[0]["key"])
+            data = current["data"]
+            enrichment = dict(fields, DOI=candidate.get("doi", ""))
+            patch = {field: value for field, value in enrichment.items() if value and not data.get(field)}
+            row.update(zotero_key=current["key"], evidence_id=parse_extra(data.get("extra")).get("NeuroNZ Evidence ID"),
+                       source_unavailable_fields=[field for field in BIBLIOGRAPHY_FIELDS if field not in fields])
+            if patch:
+                row.update(status="metadata_write_pending", changed_fields=sorted(patch), previous_date_modified=data["dateModified"])
+                manifest.append(row)
+                write_json(receipt_path, manifest)
+                client.patch_item(current["key"], current["version"], patch)
+                row["status"] = "metadata_updated_unverified"
+                write_json(receipt_path, manifest)
+                verified = client.fetch_item(current["key"])
+                verify_fields(verified["data"], patch)
+                preserved = {field: value for field, value in data.items() if field not in patch and field not in ("version", "dateModified")}
+                verify_fields(verified["data"], preserved)
+                row.update(status="metadata_updated_verified", date_added=verified["data"]["dateAdded"],
+                           date_modified=verified["data"]["dateModified"], zotero_version=verified["version"])
+                write_json(receipt_path, manifest)
+                continue
+        if not reason and not seen.intersection(tokens):
+            missing = [field for field in ("publicationTitle", "creators", "date") if not fields.get(field)]
+            if missing:
+                reason = "Missing required PubMed bibliography: " + ", ".join(missing)
         if reason or seen.intersection(tokens):
             row.update(status="review" if reason else "duplicate", reason=reason or "Existing DOI, PMID, URL, or title in group library")
             manifest.append(row)
@@ -84,6 +130,7 @@ def update_candidates(client: Any, candidates: list[dict[str, str]], output_dir:
             continue
         eid = f"E{next_id:03d}"
         item = {
+            **fields,
             "itemType": "journalArticle", "title": candidate["title"],
             "abstractNote": candidate["summary"], "url": candidate["url"],
             "DOI": candidate.get("doi", ""), "collections": [target],
@@ -106,12 +153,14 @@ def update_candidates(client: Any, candidates: list[dict[str, str]], output_dir:
             write_json(receipt_path, manifest)
             verified = client.fetch_item(created["key"])
             data = verified["data"]
+            verify_fields(data, fields)
             if (target not in data.get("collections", [])
                     or parse_extra(data.get("extra")).get("NeuroNZ Evidence ID") != eid
                     or data.get("title") != item["title"]
                     or data.get("url") != item["url"]):
                 raise RuntimeError("Created item did not match intended collection and evidence ID")
-            row.update(status="created_verified", date_added=data["dateAdded"], date_modified=data["dateModified"], zotero_version=verified["version"])
+            row.update(status="created_verified", date_added=data["dateAdded"], date_modified=data["dateModified"], zotero_version=verified["version"],
+                       source_unavailable_fields=[field for field in BIBLIOGRAPHY_FIELDS if field not in fields])
             write_json(receipt_path, manifest)
         except Exception:
             row["reason"] = "Write or readback incomplete; inspect group library before retrying"

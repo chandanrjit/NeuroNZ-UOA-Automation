@@ -100,3 +100,13 @@ class ZoteroClient:
         if result.get("failed") or "0" not in result.get("successful", {}):
             raise RuntimeError(f"Zotero item creation rejected: {result.get('failed', {})}")
         return result["successful"]["0"]
+
+    def patch_item(self, key: str, version: int, fields: dict[str, Any]) -> None:
+        headers = self._headers()
+        headers.update({"Content-Type": "application/json", "If-Unmodified-Since-Version": str(version)})
+        request = Request(
+            f"{ZOTERO_API_BASE}/{ZOTERO_LIBRARY_TYPE}/{ZOTERO_LIBRARY_ID}/items/{key}",
+            data=json.dumps(fields).encode("utf-8"), headers=headers, method="PATCH",
+        )
+        with urlopen(request, timeout=self.timeout_seconds) as response:
+            response.read()
