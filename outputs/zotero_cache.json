@@ -2768,6 +2768,266 @@
   ],
   "evidence": [
     {
+      "stable_id": "E050",
+      "zotero_key": "Z7UKKAU5",
+      "zotero_version": 276,
+      "title": "Australian Paediatric Acute Code Stroke study: study protocol for a quasi-experimental trial measuring the impact of Code Stroke protocols on time to diagnosis and access to reperfusion therapies.",
+      "summary": "Childhood stroke leads to long-term neurological impairment, impacts on quality of life and has substantial economic costs. Coordinated systems of care are required to streamline rapid diagnosis and treatment of stroke. The primary aim is to investigate the effect of Code Stroke protocols on increasing the proportion of children with stroke diagnosed within the 4.5-hour time window for reperfusion therapies.\nProspective, multicentre, quasi-experimental interventional study in nine Australian and New Zealand children's hospitals from 2020 to 2026. Children aged 1 month to <18 years with stroke symptoms are eligible for inclusion. A staged pre-implementation and post implementation study design will investigate effects of (1) Code Stroke protocols to streamline diagnosis and treatment, (2) decision support tools to improve diagnostic accuracy and (3) perfusion imaging to quantify brain at risk of infarction. Presenting characteristics, timelines of care, treatments, functional and health economic outcomes will be collected. The primary outcome is the proportion of children with stroke diagnosed within 4.5 hours, estimated using a mixed-effect logistic regression model, with the dichotomous variable time to diagnosis as the dependent variable, implementation phase as the independent fixed effect and hospitals as random effects. Sample size calculation estimates that 98 patients with radiologically confirmed stroke per phase will yield 80% power to detect change from 15% to 40% in the proportion of children diagnosed within 4.5 hours.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42707892/",
+      "doi": "10.1136/bmjno-2026-001582",
+      "pmid": "42707892",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E050",
+        "PMID": "42707892",
+        "Source candidate ID": "pubmed:42707892",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42707892/"
+      }
+    },
+    {
+      "stable_id": "E049",
+      "zotero_key": "E2FNEGZ2",
+      "zotero_version": 275,
+      "title": "Neurodevelopmental impairment and morbidity patterns across two epochs among extremely preterm infant survivors in Australia and New Zealand.",
+      "summary": "To evaluate neurodevelopmental outcomes at 2-3 years of age among survivors of extremely preterm infant (EPI).\nAnalysis of prospectively collected Australian and New Zealand Neonatal Network data on infants born <28 weeks' gestation between 2010 and 2019.\nThe prevalence of neurodevelopmental impairment (NDI), defined as any moderate to severe cerebral palsy (CP), sensory impairment or developmental delay (score <70) at 2-3 years of age was determined. Epoch comparisons (2010-204 vs 2015-2019) and the impact of major morbidity on NDI were examined, adjusting for maternal age, antenatal steroids, gestational age, Apgar score, admission temperature, sex and breast milk feeding.\nOf 6617 EPIs, 15.5% had NDI. Developmental delay was most prevalent (14.5%), including language (11.1%), motor (5.9%), cognitive (5.7%) domains, followed by CP (3.2%), deafness (1.4%) and blindness (0.4%). Compared with infants without morbidity, adjusted odds of NDI increased with one (adjusted OR (aOR) 1.50, 95% CI 1.21 to 1.84), two (aOR 2.09, 95% CI 1.60 to 2.53) and three or more coexisting morbidities (aOR 3.56, 95% CI 2.73 to 4.65). Between epochs, bronchopulmonary dysplasia increased by 6.9% and retinopathy of prematurity by 3.8%, alongside a rise in developmental delay (10.3% to 17.8%), contributing to a 6.6% absolute increase in NDI. Survivors born at 22-23 weeks had the highest NDI rates, increasing from 23.0% to 26.4%.\nNDI rates among EPI increased over time and were associated with increasing multiple morbidities. Although changes in EPIs survival patterns may have contributed to these trends, reducing neonatal morbidities and strengthening neuroprotective care remain priorities.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42697710/",
+      "doi": "10.1136/archdischild-2025-330101",
+      "pmid": "42697710",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E049",
+        "PMID": "42697710",
+        "Source candidate ID": "pubmed:42697710",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42697710/"
+      }
+    },
+    {
+      "stable_id": "E048",
+      "zotero_key": "D683AFXG",
+      "zotero_version": 274,
+      "title": "Stroke clinical documentation education program in Australia and New Zealand.",
+      "summary": "Accurate and complete clinical documentation underpins the assignment of International Classification of Disease codes used for epidemiological research, hospital activity based funding, and health service planning. Objective: To develop, implement, and evaluate an education program for clinicians and clinical documentation specialists (CDS) to improve clinical documentation of stroke.\nAn education program to improve clinical documentation of stroke was developed by the Australia and New Zealand Stroke Coding Working Group. Eligible participants were clinicians (doctors, nurses, and allied health) and CDS in Australia or New Zealand. The education program comprised 4 modules in a pre-recorded 10-minute educational video. Surveys were administered before and after the educational video to evaluate knowledge (Kirkpatrick level 2) and obtain feedback. Quantitative data were summarised using descriptive statistics. Open-text responses to the feedback survey were analysed using inductive thematic analysis.\nAmong 72 eligible participants, 41 (57%) completed the pre- and post-educational knowledge assessment surveys (n = 35 clinicians, n = 6 CDS). Compared with the pre-education survey, the median number of correct responses significantly increased in the post-education survey (pre: 3 [interquartile range (IQR) 2-4]; post: 5 [IQR 4-5]; p < 0.001). Most respondents (>90%) were satisfied with the education program, stating it provided \"practical and transferrable knowledge\" and that the education was \"quick, clear, concise.\"\nOur education program was associated with an increased knowledge of appropriate clinical documentation of stroke. Ongoing monitoring of clinical coding and clinical documentation is required to ascertain whether the education of the participants translates to improved clinical coding of stroke.Implications for health information management practice:Accurate and complete clinical documentation directly impacts clinical coding, which in turn affects reimbursement, patient safety, and data quality for epidemiological research, resource allocation, and health policy decision-making.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42698334/",
+      "doi": "10.1177/18333583261453569",
+      "pmid": "42698334",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E048",
+        "PMID": "42698334",
+        "Source candidate ID": "pubmed:42698334",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42698334/"
+      }
+    },
+    {
+      "stable_id": "E047",
+      "zotero_key": "GJFJI55X",
+      "zotero_version": 273,
+      "title": "A randomized controlled trial of a multimodality digital health intervention to aid the delivery of the modified ketogenic diet therapy for epilepsy: The Keto eCoach trial protocol.",
+      "summary": "Dietary therapy is an effective treatment for drug-resistant epilepsy; however, low adherence presents a significant barrier to use in the clinical setting. This study aims to evaluate a multimodality digital health intervention to overcome this barrier and improve outcomes in adults undertaking the modified ketogenic diet for epilepsy.\nThis is a two-arm, randomized, controlled trial. A total of 136 participants will be randomized 1:1 to receive the modified ketogenic diet as per standard clinical care, or with the addition of the multimodality digital health intervention for 12 weeks. The intervention will include three components: (1) digital diaries, (2) a novel, at-home, saliva-based ketone testing device, and (3) dynamic dietitian support.\nThe primary treatment benefit will be determined using the epilepsy desirability of outcome rank, a composite outcome measure co-designed with people living with drug-resistant epilepsy. Secondary outcomes will include seizure frequency, treatment retention, adverse events, psychiatric symptoms, quality of life, medication use, cost effectiveness, and acceptability of the intervention.\nThe results of this trial will provide evidence on the effectiveness of using this innovative digital health intervention approach to improve treatment outcomes of dietary therapy for drug-resistant epilepsy.\nThis study has received approval from the Alfred Hospital Human Research Ethics Committee (Reference No.: 723/23). The results will be disseminated via peer-reviewed publications and publicly available plain language summaries.\nAustralian New Zealand Clinical Trials Registry (ANZCTR, ACTRN12624000486527).\nThis trial aims to find out if a 12-week digital health program can improve treatment outcomes of people living with epilepsy. We will invite 136 people commencing on the modified ketogenic diet to be randomly assigned to the digital health program or standard clinic care. The treatment outcome will be assessed combining seizure frequency, side effects, and quality of life.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42704249/",
+      "doi": "10.1002/epi4.70345",
+      "pmid": "42704249",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E047",
+        "PMID": "42704249",
+        "Source candidate ID": "pubmed:42704249",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42704249/"
+      }
+    },
+    {
+      "stable_id": "E046",
+      "zotero_key": "EG675KFX",
+      "zotero_version": 272,
+      "title": "Dabigatran use and cerebrovascular event risk across body mass index in atrial fibrillation: a real-world nested case-control study.",
+      "summary": "Dabigatran is widely used for stroke prevention in atrial fibrillation (AF), but concerns remain regarding its effectiveness in patients with Class III obesity ( BMI ≥40 kg/m2.) We evaluated the association between dabigatran use in patients with AF and ischaemic stroke (IS) or transient ischaemic attack (TIA) across body mass index (BMI) categories in a multiethnic New Zealand population. In this retrospective nested case-control study, cases with incident IS/TIA were identified from the fifth Auckland Regional Community Stroke Study (1st September 2020-31st August 2021), and event-free controls were randomly selected from the National Minimum Dataset. Multivariable logistic regression was used to estimate adjusted odds ratios (aORs) for IS/TIA, and effect modification by BMI catergory (< 30, 30-39.9, ≥40 kg/m2) was assessed using an interaction term. Among 1,854 patients with AF (295 cases, 1,559 controls), dabigatran use was associated with lower odds of IS/TIA (adjusted odds ratio [aOR] 0.50, 95% CI 0.38-0.68). After multivariable adjustment, BMI was not independently associated with IS/TIA risk. The association between dabigatran use and lower IS/TIA risk was similar in patients with BMI <30 and 30-39.9 kg/m2, but the point estimate shifted towards the null in patients with BMI ≥40 kg/m2 and was imprecise. There was no statistical evidence of effect modification by BMI (p-interaction=0.49), although clinically important attenuation in Class III obesity could not be excluded. In this real-world nested case-control study, there was no clear statistical evidence of BMI-related effect modification; however, the study had limited power in patients with BMI ≥40 kg/m2, and clinically important attenuation, including the possibility of no reduction in IS/TIA odds with dabigatran use in Class III obesity cannot be excluded.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42704410/",
+      "doi": "10.1007/s11239-026-03394-1",
+      "pmid": "42704410",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E046",
+        "PMID": "42704410",
+        "Source candidate ID": "pubmed:42704410",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42704410/"
+      }
+    },
+    {
+      "stable_id": "E045",
+      "zotero_key": "6I69SRQ5",
+      "zotero_version": 271,
+      "title": "Ethnic Differences in Outcomes of Endovascular Thrombectomy in New Zealand.",
+      "summary": "Stroke is a leading cause of morbidity and mortality in New Zealand, with ethnic disparities known to exist. Endovascular thrombectomy (EVT) has proven efficacy in reducing or preventing disability for stroke patients, but little is known about ethnic differences in functional outcomes following EVT in New Zealand.\nA retrospective nationwide registry-based study was conducted, including all patients who underwent EVT between 1st January 2011 through to 31st December 2023 in New Zealand. Demographic, clinical and procedural data were obtained from the National Stroke Register. Primary outcomes were mortality at 7 days and dichotomised modified Rankin Scale (mRS) at 90 days. Subgroup analysis compared patients presenting directly to EVT-capable centres with those requiring transfer.\n2852 EVT patients were included (68.7% European, 14.6% Māori, 7.4% Pacific, 8.4% Asian and 1.0% Other). Non-Europeans presented at younger ages and with greater vascular risk factors. Functional outcomes and 7-day mortality rates did not differ significantly by ethnicity. Odds of symptomatic intracranial haemorrhage (sICH) were greater in Māori (aOR 3.01, 1.42-6.38, p = 0.004), Pacific peoples (3.40, 1.22-9.53, p = 0.02) and Asian (aOR 3.57, 1.57-8.15, p = 0.002) patients compared to Europeans. Nearly half of patients (46.5%) initially presented to non-EVT capable centres; although EVT was delayed, functional and mortality outcomes remained similar.\nThis nationwide study found no significant ethnic disparities in functional outcomes or 7-day mortality following EVT, though sICH was more likely in non-Europeans. Despite treatment delays, patients initially presenting to non-EVT capable centres achieved comparable functional outcomes to those presenting directly to EVT centres.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42742289/",
+      "doi": "10.1111/1754-9485.70187",
+      "pmid": "42742289",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E045",
+        "PMID": "42742289",
+        "Source candidate ID": "pubmed:42742289",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42742289/"
+      }
+    },
+    {
+      "stable_id": "E044",
+      "zotero_key": "S5833PBQ",
+      "zotero_version": 270,
+      "title": "Primary care clinicians' perspectives on migraine management in Aotearoa New Zealand: a qualitative study.",
+      "summary": "Despite being a common and disabling neurological disease, migraine is often underdiagnosed and undertreated. Although most patients with migraine can be effectively managed in primary care, people with migraine in Aotearoa New Zealand (NZ) report multiple barriers to care and negative impacts of migraine on physical and mental health, work and quality of life.\nThis study aimed to describe the experience of primary care clinicians with managing migraine disease in NZ and identify enablers and barriers to effective care.\nClinicians were recruited through advertisements in an online newsletter and a regional email network. Semi-structured interviews were completed via phone or Zoom. Inductive thematic analysis was undertaken to identify key themes.\nFive general practitioners and three nurse practitioners were interviewed. Themes related to the clinician, healthcare system and societal factors were identified across the patient journey of seeking health care (cultural safety, primary care accessibility, awareness and health literacy), diagnosis (diagnostic knowledge, secondary care and diagnostic test accessibility and diagnostic overshadowing) and management (treatment knowledge, communication and patient education, access to ongoing care, role of other health professionals and stigma of chronic disease).\nSignificant barriers to migraine health care related to accessibility of primary care, particularly cost, wait times and availability. Advice from neurology was a valued resource, but access to in-person consultations for patients with migraine was limited. Clinician knowledge about migraine diagnosis and treatment was well supported by online and educational resources. Involving the wider primary care team in migraine management could help improve care.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/41134026/",
+      "doi": "10.1071/HC25078",
+      "pmid": "41134026",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E044",
+        "PMID": "41134026",
+        "Source candidate ID": "pubmed:41134026",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/41134026/"
+      }
+    },
+    {
+      "stable_id": "E043",
+      "zotero_key": "47HBUJR7",
+      "zotero_version": 269,
+      "title": "Early Arterial Oxygen Tension Thresholds for Mechanically Ventilated Patients with Non-traumatic Acute Brain Injury: A Bayesian Analysis of Three Large Neurocritical Care Datasets.",
+      "summary": "Optimal arterial oxygen tension (PaO2) thresholds in mechanically ventilated patients with nontraumatic acute brain injury (ABI), defined as intracerebral hemorrhage (ICH), aneurysmal subarachnoid hemorrhage (SAH), and acute ischemic stroke (AIS), remain uncertain. We aimed to identify ABI-specific early PaO2 thresholds associated with lowest intensive care unit (ICU) mortality in mechanically ventilated ICU patients and compare these with guideline recommendations.\nThis retrospective multicenter cohort study utilized the Australian and New Zealand Intensive Care Society Adult Patient Dataset (ANZICS-APD; N = 11,264). Bayesian logistic regression was performed with day 1 PaO2 as the independent variable and ICU mortality as the dependent variable. Priors were derived from the Medical Information Mart for Intensive Care-IV (MIMIC-IV; N = 1789) and Extubation in Neurocritical care Observational Study (ENIO; N = 544) datasets. Day 1 PaO2 thresholds were identified by calculating the range of values within 4% of the minimum mortality. The risk of ICU mortality across these PaO2 groups was compared with the European Society of Intensive Care Medicine (ESICM) recommendations.\nOf the 11,264 patients in the ANZICS-APD suitable for analysis, 4846 had ICH, 4319 had aneurysmal SAH, and 2099 had AIS. Across all ABI types, day 1 PaO2 > 299 mm Hg was rare (< 10%), with remaining patients distributed equally across the < 80, 80-120, and 120-299 mm Hg categories. The association between day 1 PaO2 and ICU mortality differed by ABI subtype: SAH showed a more pronounced U-shaped relationship than ICH and AIS. PaO2 thresholds that minimized ICU mortality (ICH: 80-230 mm Hg; SAH: 100-190 mm Hg; AIS: 100-160 mm Hg) were broader than current ESICM (PaO2 between 80 and 120 mm Hg) guideline recommendations yet conferred equivalent risk of ICU mortality. Extreme hyperoxia (> 299 mm Hg) was associated with increased risk of ICU mortality across all ABI subtypes [P(OR > 1) = 84-99%].\nIn mechanically ventilated patients with nontraumatic ABI, we defined generalizable early PaO2 thresholds that were broader than current recommendations while conferring equivalent ICU mortality risk. PaO2 exposure beyond these ranges may be harmful.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42806265/",
+      "doi": "10.1007/s12028-026-02659-0",
+      "pmid": "42806265",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E043",
+        "PMID": "42806265",
+        "Source candidate ID": "pubmed:42806265",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42806265/"
+      }
+    },
+    {
+      "stable_id": "E042",
+      "zotero_key": "SQW7NPFB",
+      "zotero_version": 268,
+      "title": "Characteristics of a Cohort of Individuals With SCA27B Associated With Repeat Expansions in FGF14.",
+      "summary": "Spinocerebellar ataxia 27B (SCA27B) is a recently discovered genetic cause of idiopathic late-onset cerebellar ataxia (ILOCA) due to guanine-adenine-adenine (GAA) repeat expansions (greater than 250) in FGF14. We aimed to identify and characterize a New Zealand cohort of patients with SCA27B.\nPatients with previous negative ataxia panels were identified from electronic records and tested with an updated ataxia repeat expansion panel including FGF14 and 5 other new genes.\nUpdated genetic testing for 11 of the 29 patients returned a positive result: repeat expansions in FGF14 in 9, RFC1 (associated with cerebellar ataxia, neuropathy, vestibular areflexia syndrome) in 1, and TBP (associated with SCA17) in 1. In the 9 patients with SCA27B, the clinical characteristics such as initial episodic symptoms and late age at onset (mean 56 years), were like those reported in European cohorts. Two patients in our cohort had palatal tremor. While 7 patients had a repeat expansion length greater than 250, 2 patients with a clinical phenotype consistent with SCA27B had between 200 and 250 repeats.\nIn our New Zealand cohort of patients with ILOCA, updated genetic testing revealed a diagnosis in 38%. SCA27B is a common cause of ILOCA in this cohort.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/42699715/",
+      "doi": "10.1212/NXG.0000000000200424",
+      "pmid": "42699715",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E042",
+        "PMID": "42699715",
+        "Source candidate ID": "pubmed:42699715",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/42699715/"
+      }
+    },
+    {
+      "stable_id": "E041",
+      "zotero_key": "6ESVE4NS",
+      "zotero_version": 267,
+      "title": "Speech-language pathology services for acquired communication disorders among indigenous peoples: A systematic review.",
+      "summary": "Indigenous adults experience higher rates of neurological incidents than non-Indigenous populations, increasing their risk of acquired communication disorders (ACD). However, access to culturally safe speech-language pathology (SLP) services in their language remains challenging. This review explored issues raised in the literature concerning SLP services for Indigenous adults with ACD globally. More specifically, it explored Indigenous adults with ACD\"s perspectives, highlighted the barriers reported by speech-language pathologists, and identified avenues for improvements. Despite the global scope of the search, the fourteen included articles were all based in Australia and Aotearoa New Zealand. Three descriptive themes emerged from the perspectives of Indigenous adults: 1) the impacts of language and culture; 2) a lack of information; 3) the context of SLP services. Two themes emerged as barriers to SLP care according to clinicians: 1) a lack of appropriate resources and cultural education; 2) the geographical and service delivery contexts of SLP services. Finally, the need for cultural safety emerged as the main theme for improving SLP care. Enhanced cultural education, along with adapted SLP materials, is needed to provide culturally safe care to Indigenous adults with ACD. However, these initiatives must be accompanied by systemic changes to the organizational policies shaping SLP services.",
+      "source_organisation": "",
+      "primary_link": "https://pubmed.ncbi.nlm.nih.gov/41793278/",
+      "doi": "10.1080/17441692.2026.2640763",
+      "pmid": "41793278",
+      "item_type": "journalArticle",
+      "date": "",
+      "tags": [
+        "nzneuro:phase2",
+        "type:evidence"
+      ],
+      "extra": {
+        "NeuroNZ Evidence ID": "E041",
+        "PMID": "41793278",
+        "Source candidate ID": "pubmed:41793278",
+        "Source category": "Published research",
+        "Availability / Access": "Public PubMed abstract; full-text access varies by publisher",
+        "Review status": "Automated source and relevance checks passed; catalogue linkage pending review",
+        "All evidence URLs": "https://pubmed.ncbi.nlm.nih.gov/41793278/"
+      }
+    },
+    {
       "stable_id": "E001",
       "zotero_key": "HAH4QXTC",
       "zotero_version": 266,

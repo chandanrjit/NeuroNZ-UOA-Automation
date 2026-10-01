@@ -1,7 +1,13 @@
 {
-  "started_at": "2026-10-01T23:33:56.717734+00:00",
-  "finished_at": "2026-10-01T23:35:41.465108+00:00",
-  "mode": "read_only_monitoring",
+  "started_at": "2026-10-01T23:39:23.829360+00:00",
+  "finished_at": "2026-10-01T23:41:28.438385+00:00",
+  "mode": "validated_evidence_import",
+  "zotero_updates": {
+    "created_verified": 10,
+    "duplicates": 0,
+    "review": 14,
+    "manifest": "outputs/zotero_update_manifest.json"
+  },
   "zotero_library_type": "groups",
   "zotero_library_id": "6643086",
   "zotero_collection_key": "PA2ESN45",
@@ -17,8 +23,8 @@
       "collection_type": "evidence",
       "collection_name": "02 Evidence Log",
       "collection_key": "PA2ESN45",
-      "items_fetched": 102,
-      "records_with_stable_id": 102
+      "items_fetched": 112,
+      "records_with_stable_id": 112
     },
     {
       "collection_type": "taxonomy",
