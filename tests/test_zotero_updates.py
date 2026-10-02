@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock
 
-from neuronz_automation.zotero_updates import relevance_issue, update_candidates
+from neuronz_automation.zotero_updates import relevance_issue, update_candidates, verify_fields
 
 
 def candidate():
@@ -16,6 +16,14 @@ def candidate():
 
 
 class ZoteroUpdateTests(unittest.TestCase):
+    def test_readback_accepts_zotero_timestamp_and_tag_normalization(self):
+        verify_fields({"accessDate": "2026-10-02T02:29:11Z", "tags": [{"tag": "B", "type": 0}, {"tag": "A"}]},
+                      {"accessDate": "2026-10-02 02:29:11", "tags": [{"tag": "A"}, {"tag": "B"}]})
+        with self.assertRaisesRegex(RuntimeError, "accessDate"):
+            verify_fields({"accessDate": "2026-10-02T02:29:12Z"}, {"accessDate": "2026-10-02 02:29:11"})
+        with self.assertRaisesRegex(RuntimeError, "publicationTitle"):
+            verify_fields({"publicationTitle": "Wrong journal"}, {"publicationTitle": "Intended journal"})
+
     def test_dataset_import_writes_to_catalogue_and_verifies_condition(self):
         client = self.client()
         client.fetch_child_collections.return_value += [

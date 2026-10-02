@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -26,9 +27,26 @@ def bibliography(candidate: dict[str, str]) -> dict[str, Any]:
     return {field: source[field] for field in BIBLIOGRAPHY_FIELDS if source.get(field)}
 
 
+def comparable(field: str, value: Any) -> Any:
+    """Account only for known Zotero transport normalization, not content changes."""
+    if field == "accessDate" and value:
+        try:
+            parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            return parsed.astimezone(timezone.utc)
+        except ValueError:
+            return value
+    if field == "tags" and isinstance(value, list):
+        return sorted((tag.get("tag", ""), tag.get("type", 0)) for tag in value)
+    return value
+
+
 def verify_fields(data: dict[str, Any], fields: dict[str, Any]) -> None:
-    if any(data.get(field) != value for field, value in fields.items()):
-        raise RuntimeError("Zotero bibliography readback did not match the verified source")
+    mismatches = [field for field, value in fields.items()
+                  if comparable(field, data.get(field)) != comparable(field, value)]
+    if mismatches:
+        raise RuntimeError("Zotero readback mismatch in fields: " + ", ".join(mismatches))
 
 
 def duplicate_tokens(data: dict[str, Any]) -> set[str]:
