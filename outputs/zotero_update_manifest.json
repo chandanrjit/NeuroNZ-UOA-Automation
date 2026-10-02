@@ -3,17 +3,27 @@
     "candidate_id": "pubmed:41793278",
     "title": "Speech-language pathology services for acquired communication disorders among indigenous peoples: A systematic review.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E041",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "6ESVE4NS"
+    ],
     "zotero_key": "6ESVE4NS",
-    "date_added": "2026-10-01T23:39:30Z",
-    "date_modified": "2026-10-01T23:39:30Z",
-    "zotero_version": 267
+    "evidence_id": "E041",
+    "source_unavailable_fields": [
+      "PMCID",
+      "rights"
+    ],
+    "status": "duplicate",
+    "reason": "Existing DOI, PMID, URL, or title in group library"
   },
   {
     "candidate_id": "pubmed:42751425",
     "title": "Long-term outcomes of out-of-hospital cardiac arrest survivors in New Zealand: A prospective, longitudinal cohort study.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -21,6 +31,9 @@
     "candidate_id": "pubmed:42167006",
     "title": "Gradient intrafibrillar mineralized collagen scaffold promotes osteochondral regeneration by enhancing differentiation of SCRG1+ progenitor cells.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Animal breed match does not establish NZ relevance"
   },
@@ -28,6 +41,9 @@
     "candidate_id": "pubmed:42725169",
     "title": "Kidney Donation After Circulatory Death Is Associated With Sustained Graft Function, Comparable Graft, and Patient Survival.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -35,17 +51,52 @@
     "candidate_id": "pubmed:42699715",
     "title": "Characteristics of a Cohort of Individuals With SCA27B Associated With Repeat Expansions in FGF14.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E042",
+    "condition_matches": [
+      {
+        "condition_id": "NC-003",
+        "name": "Ataxia",
+        "matched_term": "sca27b",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "SQW7NPFB"
+    ],
     "zotero_key": "SQW7NPFB",
+    "evidence_id": "E042",
+    "source_unavailable_fields": [],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMCID",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "issue",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "pages",
+      "publicationTitle",
+      "rights",
+      "tags",
+      "volume"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:31Z",
     "date_added": "2026-10-01T23:39:31Z",
-    "date_modified": "2026-10-01T23:39:31Z",
-    "zotero_version": 268
+    "date_modified": "2026-10-02T02:38:06Z",
+    "zotero_version": 278
   },
   {
     "candidate_id": "pubmed:42686207",
     "title": "Potential Neonatal Donors in Australia: A National Cohort Study.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -53,6 +104,9 @@
     "candidate_id": "pubmed:42679829",
     "title": "Adolescent health across Asia Pacific, 2000-23: a systematic analysis for the Global Burden of Disease Study 2023.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -60,6 +114,9 @@
     "candidate_id": "pubmed:41368923",
     "title": "An international survey of research capacity and culture in speech-language pathology: Preliminary findings.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -67,17 +124,51 @@
     "candidate_id": "pubmed:42806265",
     "title": "Early Arterial Oxygen Tension Thresholds for Mechanically Ventilated Patients with Non-traumatic Acute Brain Injury: A Bayesian Analysis of Three Large Neurocritical Care Datasets.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E043",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "47HBUJR7"
+    ],
     "zotero_key": "47HBUJR7",
+    "evidence_id": "E043",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "pages",
+      "PMCID"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "publicationTitle",
+      "rights"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:31Z",
     "date_added": "2026-10-01T23:39:31Z",
-    "date_modified": "2026-10-01T23:39:31Z",
-    "zotero_version": 269
+    "date_modified": "2026-10-02T02:38:07Z",
+    "zotero_version": 279
   },
   {
     "candidate_id": "pubmed:42784819",
     "title": "Oil on the brain: dementia in the popular press prior to the 1906 Alzheimer case report.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [
+      {
+        "condition_id": "NC-002",
+        "name": "Alzheimer's disease and other dementias",
+        "matched_term": "dementia",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Historical commentary requires data relevance review"
   },
@@ -85,6 +176,9 @@
     "candidate_id": "pubmed:42619342",
     "title": "Changing frequencies: Boston Naming Test normative data for Australian young adults.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -92,17 +186,53 @@
     "candidate_id": "pubmed:41134026",
     "title": "Primary care clinicians' perspectives on migraine management in Aotearoa New Zealand: a qualitative study.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E044",
+    "condition_matches": [
+      {
+        "condition_id": "NC-038",
+        "name": "Migraine",
+        "matched_term": "Migraine",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "S5833PBQ"
+    ],
     "zotero_key": "S5833PBQ",
+    "evidence_id": "E044",
+    "source_unavailable_fields": [
+      "PMCID"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "issue",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "pages",
+      "publicationTitle",
+      "rights",
+      "tags",
+      "volume"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:32Z",
     "date_added": "2026-10-01T23:39:32Z",
-    "date_modified": "2026-10-01T23:39:32Z",
-    "zotero_version": 270
+    "date_modified": "2026-10-02T02:38:08Z",
+    "zotero_version": 280
   },
   {
     "candidate_id": "pubmed:42800307",
     "title": "Proteomic signatures during pregnancy: an exploratory cohort study of long-term health indicators.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -110,72 +240,272 @@
     "candidate_id": "pubmed:42742289",
     "title": "Ethnic Differences in Outcomes of Endovascular Thrombectomy in New Zealand.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E045",
+    "condition_matches": [
+      {
+        "condition_id": "NC-072",
+        "name": "Stroke",
+        "matched_term": "endovascular thrombectomy",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "6I69SRQ5"
+    ],
     "zotero_key": "6I69SRQ5",
+    "evidence_id": "E045",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "pages",
+      "PMCID"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "publicationTitle",
+      "rights",
+      "tags"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:32Z",
     "date_added": "2026-10-01T23:39:32Z",
-    "date_modified": "2026-10-01T23:39:32Z",
-    "zotero_version": 271
+    "date_modified": "2026-10-02T02:38:09Z",
+    "zotero_version": 281
   },
   {
     "candidate_id": "pubmed:42704410",
     "title": "Dabigatran use and cerebrovascular event risk across body mass index in atrial fibrillation: a real-world nested case-control study.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E046",
+    "condition_matches": [
+      {
+        "condition_id": "NC-072",
+        "name": "Stroke",
+        "matched_term": "cerebrovascular",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "EG675KFX"
+    ],
     "zotero_key": "EG675KFX",
+    "evidence_id": "E046",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "pages",
+      "PMCID"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "publicationTitle",
+      "rights",
+      "tags"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:33Z",
     "date_added": "2026-10-01T23:39:33Z",
-    "date_modified": "2026-10-01T23:39:33Z",
-    "zotero_version": 272
+    "date_modified": "2026-10-02T02:38:11Z",
+    "zotero_version": 282
   },
   {
     "candidate_id": "pubmed:42704249",
     "title": "A randomized controlled trial of a multimodality digital health intervention to aid the delivery of the modified ketogenic diet therapy for epilepsy: The Keto eCoach trial protocol.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E047",
+    "condition_matches": [
+      {
+        "condition_id": "NC-023",
+        "name": "Epilepsy",
+        "matched_term": "Epilepsy",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "GJFJI55X"
+    ],
     "zotero_key": "GJFJI55X",
+    "evidence_id": "E047",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "pages"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMCID",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "publicationTitle",
+      "rights",
+      "tags"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:33Z",
     "date_added": "2026-10-01T23:39:33Z",
-    "date_modified": "2026-10-01T23:39:33Z",
-    "zotero_version": 273
+    "date_modified": "2026-10-02T02:38:12Z",
+    "zotero_version": 283
   },
   {
     "candidate_id": "pubmed:42698334",
     "title": "Stroke clinical documentation education program in Australia and New Zealand.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E048",
+    "condition_matches": [
+      {
+        "condition_id": "NC-072",
+        "name": "Stroke",
+        "matched_term": "Stroke",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "D683AFXG"
+    ],
     "zotero_key": "D683AFXG",
+    "evidence_id": "E048",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "PMCID",
+      "rights"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "pages",
+      "publicationTitle",
+      "tags"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:34Z",
     "date_added": "2026-10-01T23:39:34Z",
-    "date_modified": "2026-10-01T23:39:34Z",
-    "zotero_version": 274
+    "date_modified": "2026-10-02T02:38:13Z",
+    "zotero_version": 284
   },
   {
     "candidate_id": "pubmed:42697710",
     "title": "Neurodevelopmental impairment and morbidity patterns across two epochs among extremely preterm infant survivors in Australia and New Zealand.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E049",
+    "condition_matches": [
+      {
+        "condition_id": "NC-058",
+        "name": "Neurological complications due to preterm birth",
+        "matched_term": "preterm",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "E2FNEGZ2"
+    ],
     "zotero_key": "E2FNEGZ2",
+    "evidence_id": "E049",
+    "source_unavailable_fields": [
+      "volume",
+      "issue",
+      "pages",
+      "PMCID"
+    ],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "publicationTitle",
+      "rights",
+      "tags"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:35Z",
     "date_added": "2026-10-01T23:39:35Z",
-    "date_modified": "2026-10-01T23:39:35Z",
-    "zotero_version": 275
+    "date_modified": "2026-10-02T02:38:15Z",
+    "zotero_version": 285
   },
   {
     "candidate_id": "pubmed:42707892",
     "title": "Australian Paediatric Acute Code Stroke study: study protocol for a quasi-experimental trial measuring the impact of Code Stroke protocols on time to diagnosis and access to reperfusion therapies.",
     "collection_key": "KFGR6AVK",
-    "status": "created_verified",
-    "evidence_id": "E050",
+    "condition_matches": [
+      {
+        "condition_id": "NC-072",
+        "name": "Stroke",
+        "matched_term": "Stroke",
+        "basis": "explicit_title"
+      }
+    ],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [
+      "Z7UKKAU5"
+    ],
     "zotero_key": "Z7UKKAU5",
+    "evidence_id": "E050",
+    "source_unavailable_fields": [],
+    "status": "metadata_updated_verified",
+    "changed_fields": [
+      "ISSN",
+      "PMCID",
+      "PMID",
+      "accessDate",
+      "creators",
+      "date",
+      "extra",
+      "issue",
+      "journalAbbreviation",
+      "language",
+      "libraryCatalog",
+      "pages",
+      "publicationTitle",
+      "rights",
+      "tags",
+      "volume"
+    ],
+    "previous_date_modified": "2026-10-01T23:39:35Z",
     "date_added": "2026-10-01T23:39:35Z",
-    "date_modified": "2026-10-01T23:39:35Z",
-    "zotero_version": 276
+    "date_modified": "2026-10-02T02:38:16Z",
+    "zotero_version": 286
   },
   {
     "candidate_id": "pubmed:42608334",
     "title": "Beyond the protocol: navigating ethics and governance in the multicentre implementation trials - the QASC Australasia and T3 Trials.",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
+    "duplicate_zotero_keys": [],
     "status": "review",
     "reason": "Neurological study focus requires review"
   },
@@ -183,28 +513,36 @@
     "candidate_id": "",
     "title": "",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
     "status": "review",
-    "reason": "Source discovery error"
+    "reason": "Dataset source discovery failed: neurological: Expecting value: line 1 column 1 (char 0)"
   },
   {
     "candidate_id": "",
     "title": "",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
     "status": "review",
-    "reason": "Source discovery error"
+    "reason": "Dataset source discovery failed: stroke: Expecting value: line 1 column 1 (char 0)"
   },
   {
     "candidate_id": "",
     "title": "",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
     "status": "review",
-    "reason": "Source discovery error"
+    "reason": "Dataset source discovery failed: dementia: Expecting value: line 1 column 1 (char 0)"
   },
   {
     "candidate_id": "",
     "title": "",
     "collection_key": "KFGR6AVK",
+    "condition_matches": [],
+    "relationship_status": "catalogue linkage pending review",
     "status": "review",
-    "reason": "Source discovery error"
+    "reason": "Dataset source discovery failed: disability health: Expecting value: line 1 column 1 (char 0)"
   }
 ]

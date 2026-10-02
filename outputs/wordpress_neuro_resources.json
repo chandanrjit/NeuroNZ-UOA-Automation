@@ -26,7 +26,8 @@
       "neuro:Support needs",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-001"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-002",
@@ -56,7 +57,8 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-002"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-003",
@@ -86,7 +88,8 @@
       "neuro:Named neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-003"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-004",
@@ -116,7 +119,8 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-004"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-005",
@@ -145,7 +149,8 @@
       "neuro:Stroke; TBI",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-005"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-006",
@@ -174,7 +179,8 @@
       "neuro:Named neurological conditions (ICD-codes)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-006"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-007",
@@ -204,7 +210,8 @@
       "neuro:Named neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-007"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-008",
@@ -233,7 +240,8 @@
       "neuro:Named neurological conditions (ICD-codes)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-008"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-009",
@@ -262,7 +270,8 @@
       "neuro:Medications for neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-009"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-010",
@@ -291,7 +300,8 @@
       "neuro:Named neurological conditions (ICD-codes)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-010"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-011",
@@ -320,7 +330,8 @@
       "neuro:Named neurological conditions (ICD-codes)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-011"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-012",
@@ -349,7 +360,8 @@
       "neuro:Referral to neurological services",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-012"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-013",
@@ -379,7 +391,8 @@
       "neuro:Referral to neurological services",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-013"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-014",
@@ -408,7 +421,8 @@
       "neuro:Signs & symptoms of neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-014"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-015",
@@ -437,7 +451,8 @@
       "neuro:Medications for neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-015"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-016",
@@ -466,7 +481,8 @@
       "neuro:Medications for neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-016"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-017",
@@ -495,7 +511,8 @@
       "neuro:Notifiable neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-017"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-018",
@@ -524,7 +541,8 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-018"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-019",
@@ -554,7 +572,8 @@
       "neuro:Named neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-019"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-020",
@@ -584,7 +603,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-020"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-021",
@@ -613,7 +633,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-021"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-022",
@@ -643,7 +664,8 @@
       "neuro:Named neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-022"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-023",
@@ -672,7 +694,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-023"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-024",
@@ -701,7 +724,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-024"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-025",
@@ -730,7 +754,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-025"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-026",
@@ -759,7 +784,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-026"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-027",
@@ -788,7 +814,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-027"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-028",
@@ -817,7 +844,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-028"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-029",
@@ -846,7 +874,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-029"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-030",
@@ -875,7 +904,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-030"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-031",
@@ -905,7 +935,8 @@
       "neuro:Stroke; migraine",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-031"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-032",
@@ -935,7 +966,8 @@
       "neuro:Named neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-032"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-033",
@@ -965,7 +997,8 @@
       "neuro:Named neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-033"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-034",
@@ -995,7 +1028,8 @@
       "neuro:Neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-034"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-035",
@@ -1024,7 +1058,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-035"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-036",
@@ -1053,7 +1088,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-036"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-037",
@@ -1082,7 +1118,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-037"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-038",
@@ -1111,7 +1148,8 @@
       "neuro:Functional limitations",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-038"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-039",
@@ -1140,7 +1178,8 @@
       "neuro:MCI",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-039"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-040",
@@ -1169,7 +1208,8 @@
       "neuro:Neurogenetic conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-040"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-041",
@@ -1198,7 +1238,8 @@
       "neuro:Migraine",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-041"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-042",
@@ -1227,7 +1268,8 @@
       "neuro:Rare neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-042"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-043",
@@ -1256,7 +1298,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-043"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-044",
@@ -1285,7 +1328,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-044"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-045",
@@ -1314,7 +1358,8 @@
       "neuro:TBI",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-045"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-046",
@@ -1343,7 +1388,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-046"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-047",
@@ -1372,7 +1418,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-047"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-048",
@@ -1401,7 +1448,8 @@
       "neuro:Named neurodevelopmental conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-048"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-049",
@@ -1430,7 +1478,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-049"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-050",
@@ -1459,7 +1508,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-050"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-051",
@@ -1488,7 +1538,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-051"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-052",
@@ -1517,7 +1568,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-052"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-053",
@@ -1546,7 +1598,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-053"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-054",
@@ -1575,7 +1628,8 @@
       "neuro:Neurological workforce",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-054"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-055",
@@ -1604,7 +1658,8 @@
       "neuro:Acute encephalitis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-055"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-056",
@@ -1633,7 +1688,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-056"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-057",
@@ -1662,7 +1718,8 @@
       "neuro:Signs & symptoms of neurological conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-057"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-058",
@@ -1691,7 +1748,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-058"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-059",
@@ -1720,7 +1778,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-059"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-060",
@@ -1749,7 +1808,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-060"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-061",
@@ -1778,7 +1838,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-061"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-062",
@@ -1807,7 +1868,8 @@
       "neuro:Dementia",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-062"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-063",
@@ -1836,7 +1898,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-063"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-064",
@@ -1865,7 +1928,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-064"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-065",
@@ -1894,7 +1958,8 @@
       "neuro:Motor neurone disease",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-065"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-066",
@@ -1923,7 +1988,8 @@
       "neuro:Neurogenetic conditions",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-066"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-067",
@@ -1952,7 +2018,8 @@
       "neuro:CJD",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-067"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-068",
@@ -1981,7 +2048,8 @@
       "neuro:Brain tumours",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-068"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-069",
@@ -2010,7 +2078,8 @@
       "neuro:Spinal cord injury",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-069"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-070",
@@ -2039,7 +2108,8 @@
       "neuro:Cerebral Palsy",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-070"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-071",
@@ -2068,7 +2138,8 @@
       "neuro:TBI",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-071"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-072",
@@ -2097,7 +2168,8 @@
       "neuro:Stroke",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-072"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-073",
@@ -2126,7 +2198,8 @@
       "neuro:Epilepsy",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-073"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-074",
@@ -2155,7 +2228,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-074"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-075",
@@ -2184,7 +2258,8 @@
       "neuro:Congenital anomalies",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-075"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-076",
@@ -2213,7 +2288,8 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-076"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-077",
@@ -2242,7 +2318,8 @@
       "neuro:Multiple sclerosis",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-077"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-078",
@@ -2271,7 +2348,8 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-078"
-    ]
+    ],
+    "condition_ids": []
   },
   {
     "record_id": "NZNEURO-079",
@@ -2301,6 +2379,7 @@
       "neuro:Named neurological conditions (subset)",
       "nzneuro:phase1",
       "nzneuro:record:NZNEURO-079"
-    ]
+    ],
+    "condition_ids": []
   }
 ]
